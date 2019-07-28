@@ -1,0 +1,85 @@
+@startuml
+class Token {
+    -name: string
+    -address: string
+    -balance: BigNumber
+    -decimals: BigNumber
+    +getTokenDecimalBalance(): BigNumber
+    +setTokenDecimalBalance(tokenDecimalBalance: BigNumber): void
+    +getEncodedTokenData(): string
+    +getName(): string
+    +setName(name: string): void
+    +getAddress(): string
+    +setAddress(address: string): void
+    +getBalance(): BigNumber
+    +getBalanceAsNumber(): number
+    +setBalance(balance: BigNumber): void
+    +getDecimals(): BigNumber
+    +setDecimals(decimals: BigNumber): void
+}
+class Shell {
+    -tokenArray: Token[]
+    +getBalance(): BigNumber
+    +getOverlappedShell(otherShell: Shell): Shell
+    +getTokenAddresses(): string[]
+    +getAddressToValueMap(): Map<string, BigNumber>
+    +getSortedTokenArray(): Token[]
+    +setTokenArray(tokenArray: Token[]): void
+    +getTokenArray(): Token[]
+}
+class User {
+    -address: string
+    -shell: Shell
+    +getAddress(): string
+    +setAddress(address: string): void
+    +getShell(): Shell
+    +setShell(shell: Shell): void
+}
+interface IProvider {
+    +getCurrentUser(): Promise<User>
+    +getUser(userAddress: string): Promise<User>
+    +updateUser(user: User): Promise<User>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<User>
+    +validateToken(tokenAddress: string): Promise<Token>
+    +setPlatform(platform: any): void
+}
+class Transaction {
+    -sender: User
+    -senderShell: Shell
+    -receiver: User
+    -receiverShell: Shell
+    -amount: BigNumber
+    +isOverlapEnoughToCoverTx(): boolean
+    +getTransactionShell(): Shell
+    +getEpsilonTransactionShell(epsilon?: BigNumber): Shell
+    +getSender(): User
+    +setSender(sender: User): void
+    +getReceiver(): User
+    +setReceiver(receiver: User): void
+    +getAmount(): BigNumber
+    +getOverlapBalance(): BigNumber
+    +setAmount(amount: BigNumber): void
+    -isTotalBalanceEnoughToCoverTx(epsilon?: BigNumber): boolean
+}
+class CowriWeb3Provider implements IProvider {
+    -web3: any
+    +getUserAddress(): Promise<string>
+    +getShellLedgerContract(): Promise<any>
+    +getCurrentUser(): Promise<User>
+    +updateUser(user: User): Promise<User>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<User>
+    +validateToken(tokenAddress: string): Promise<Token>
+    +getUser(accountAddress: string): Promise<User>
+    +setPlatform(platform: any): void
+    -getAccountTokenBalance(accountAddress: string, tokenAddress: string): Promise<BigNumber>
+    -getTokenMetadata(tokenAddress: string): Promise<Token>
+    -{static} contract: any
+}
+class default {
+    -provider: IProvider
+    +getCurrentUser(): Promise<User>
+    +updateUser(user: User): Promise<User>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<User>
+    +validateToken(tokenAddress: string): Promise<Token>
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+actor DAPP #Pink
+actor CowriWeb3 #Yellow
+collections Transaction #LightGreen
+collections Shell #LightGreen
+collections User #LightGreen
+collections Token #LightGreen
+collections AuctionGroup #Yellow
+collections Auction #Yellow
+collections Order #Yellow
+collections ZeroX #LightYellow
+actor Bob #LightBlue
+
+autonumber
+DAPP -> CowriWeb3: sendCowri(receiver, amount)
+CowriWeb3 -> Transaction: getTransactionShell(sender, receiver, amount)
+CowriWeb3 -> Transaction: getEpsilonTransactionShell() returns swapShell
+CowriWeb3 -> Transaction: swapTokens(swapShell);
+Transaction -> ZeroX: swapToken(fromToken, toToken)
+CowriWeb3 -> Bob: sendTokens()
+
+
+@enduml

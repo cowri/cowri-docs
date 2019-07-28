@@ -1,0 +1,38 @@
+@startuml
+actor Alice
+rectangle MetaMask  #LightBlue [
+MetaMask
+]
+rectangle CowriDemoapps #LightYellow [
+Cowri Demo Apps
+]
+rectangle CowriDAppSDK #LightGreen [
+Cowri DApp SDK
+]
+rectangle CowriFaucet  #LightYellow [
+Cowri Faucet
+]
+rectangle CowriCore #LightGreen [
+Cowri Core
+]
+rectangle CowriLiquidityProvider  #LightYellow [
+Cowri Liquidity Provider
+]
+rectangle CowriProtocol  #LightGreen [
+Cowri Protocol
+]
+database DistributedLedger #LightBlue [ 
+Distributed Ledger 
+]
+
+Alice -- MetaMask
+MetaMask -- CowriDemoapps
+CowriDemoapps -- CowriDAppSDK
+CowriDAppSDK -- CowriFaucet
+CowriDAppSDK -- CowriCore
+CowriDAppSDK -- CowriLiquidityProvider
+CowriCore -- CowriProtocol
+CowriProtocol -- DistributedLedger
+CowriLiquidityProvider -- DistributedLedger
+CowriFaucet -- DistributedLedger
+@enduml

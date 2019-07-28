@@ -1,0 +1,20 @@
+@startuml
+class Token {
+    -name: string
+    -address: string
+    -balance: BigNumber
+    -decimals: BigNumber
+    +getTokenDecimalBalance(): BigNumber
+    +setTokenDecimalBalance(tokenDecimalBalance: BigNumber): void
+    +getEncodedTokenData: () => string
+    +getName(): string
+    +setName(name: string): void
+    +getAddress(): string
+    +setAddress(address: string): void
+    +getBalance(): BigNumber
+    +getBalanceAsNumber(): number
+    +setBalance(balance: BigNumber): void
+    +getDecimals(): BigNumber
+    +setDecimals(decimals: BigNumber): void
+}
+@enduml

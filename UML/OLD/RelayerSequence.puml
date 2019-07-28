@@ -1,0 +1,31 @@
+@startuml
+actor Alice #Pink
+collections DApp #Pink
+collections ShellManager #Pink
+collections Relayer #LightGreen
+collections LiquidityProvider #Yellow
+collections BobsWallet #LightBlue
+actor Bob #Blue
+
+autonumber
+Alice -> DApp: Send Bob 100 Cowri
+DApp <-> ShellManager: Get SendCowri Request
+DApp <-> ShellManager: Get Swap Set
+DApp <-> ShellManager: Create Swap Bids
+DApp -> Relayer: Receive swap set
+Relayer -> Relayer: Create Auction
+Relayer <-> LiquidityProvider: Read Order book for swap requests
+LiquidityProvider <-> LiquidityProvider: Make Bids on Swap Requests
+LiquidityProvider <-> Relayer: Receive swap bids
+Relayer <-> Relayer : Close Auction
+Relayer <-> Relayer: Make Best Swap Set
+Relayer <-> LiquidityProvider: Read Order Book for Confirmed Best Swap Sets
+Relayer <-> Relayer : Decide Auction
+LiquidityProvider <-> LiquidityProvider: Create Order for Best Swap Set
+LiquidityProvider <-> Relayer: Receive Liquidity Provider Order
+Relayer <-> Relayer : Finalize Transfer
+Relayer -> DApp : Notify Alice of LiquIdity Provider Orders
+DApp <-> DApp: Take Orders from Best Swap Set
+Alice -> Bob: - Send StableCoins
+
+@enduml

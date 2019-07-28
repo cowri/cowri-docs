@@ -1,0 +1,75 @@
+@startuml
+' uncomment the line below if you're using computer with a retina display
+' skinparam dpi 300
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+' we use bold for primary key
+' green color for unique
+' and underscore for not_null
+!define primary_key(x) <b>x</b>
+!define unique(x) <color:green>x</color>
+!define not_null(x) <u>x</u>
+' other tags available:
+' <i></i>
+' <back:COLOR></color>, where color is a color name or html color code
+' (#FFAACC)
+' see: http://plantuml.com/classes.html#More
+hide methods
+hide stereotypes
+
+' entities
+Table(auction_group, "Auction Group\n(Auction Group Table)") {
+    primary_key(auctionGroupID) integer not_null AUTO INCREMENT
+    parent integer
+    not_null(status) varchar
+    not_null(start) DATETIME
+    not_null(duration) integer
+}
+
+Table(auction, "Auction\n(Auction Table") {
+    primary_key(auctionID) integer not_null AUTO INCREMENT
+    parent integer
+    external_id varchar
+    not_null(status) varchar
+    not_null(start) DATETIME
+    not_null(duration) integer
+    not_null(takerAddress) varchar
+    not_null(takerAssetData) varchar
+    not_null(takerAssetAmount) varchar
+    not_null(makerAddress) varchar
+    not_null(makerAssetData) varchar
+    not_null(makerAssetAmount) varchar
+}
+
+Table(auction_item, "Auction Item\n(Auction Item Table") {
+    primary_key(auctionID) integer
+    primary_key(auctionItem) integer
+    not_null(external_id) varchar
+}
+
+Table(signed_order_model, "signed Order\n(Signed Order from 0x)") {
+primary_key(hash) varchar
+not_null(senderAddress) varchar
+not_null(makerAddress) varchar
+not_null(takerAddress) varchar
+not_null(makerAssetData) varchar
+not_null(takerAssetData) varchar
+not_null(exchangeAddress) varchar
+not_null(feeRecipientAddress) varchar
+not_null(expirationTimeSeconds) integer
+not_null(makerFee) varchar
+not_null(takerFee) varchar
+not_null(makerAssetAmount) varchar
+not_null(takerAssetAmount) varchar
+not_null(salt) varchar
+not_null(signature) varchar
+}
+
+
+' relationships
+' transfer -- auction_group --> auction(epsilons * to_tokens) --> auction(to_token)
+'transfer -- auction_group : "A tranafer"
+auction_group "1" --> "*" auction_group : "A auction group may be a child of another auction group"
+auction_group "1" --> "0..N" auction : "A auction group may have many auctions"
+auction "1" --> "0..N" auction_item : "An auction may have many auction items"
+auction_item "1" -- "1" signed_order_model : "An auction item has one signed order"
+@enduml

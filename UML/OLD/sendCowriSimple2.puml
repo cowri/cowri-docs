@@ -1,0 +1,28 @@
+@startuml
+actor Alice #Pink
+collections DApp #Pink
+collections CowriWeb3 #YellowGreen
+collections Transaction #LightGreen
+collections Shell #LightGreen
+collections User #LightGreen
+collections Token #LightGreen
+collections AuctionGroup #Yellow
+collections Auction #Yellow
+collections Order #Yellow
+collections ZeroX #LightYellow
+actor Bob #Blue
+
+autonumber
+Alice -> DApp: Send Bob 100 Cowri
+DApp -> CowriWeb3: sendCowri(receiver, amount)
+CowriWeb3 -> Transaction: getTransactionShell(sender, receiver, amount)
+CowriWeb3 -> Transaction: getEpsilonTransactionShell() returns swapShell
+autonumber resume "<font color=red>"
+CowriWeb3 -[#red]> Transaction: "<font color=red>getNonOverlapShell() returns nonOverlapShell"
+CowriWeb3 -[#red]> Transaction: "<font color=red>swapTokens(swapShell,nonOverlapShell[1]);"
+Transaction -[#red]> ZeroX: "<font color=red>swapToken(fromToken, toToken)"
+autonumber resume "<font color=Blue>"
+CowriWeb3 -[#blue]> Bob: "<font color=Blue>sendTokens(receiever, tokenAddress, tokenAmount)"
+
+
+@enduml
