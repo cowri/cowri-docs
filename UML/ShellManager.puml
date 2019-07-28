@@ -1,0 +1,100 @@
+@startuml
+interface IProvider {
+    +getCurrentUser(): Promise<any>
+    +getUser(userAddress: string): Promise<any>
+    +updateUser(user: any): Promise<any>
+    +mintUser(user: any): Promise<any>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<any>
+    +validateToken(tokenAddress: string): Promise<any>
+    +getMaxShellSize(): Promise<number>
+    +setPlatform(platform: any): void
+}
+interface IRequest {
+    +post(url: string, payload: any): Promise<any>
+    +get(url: string): Promise<any>
+}
+interface ILiquidityProvider {
+    +isEnoughLiquidity(tokenArray: any[], config: any): Promise<boolean>
+    +requestSwap(takerAddress: string, fromToken: any, toToken: any, config: any): Promise<any>
+}
+class ZeroX {
+    -web3: any
+    -makerWeb3: any
+    -takerrpcSubprovider: MetamaskSubprovider
+    -makerrpcSubprovider: RPCSubprovider
+    -makerProviderEngine: Web3ProviderEngine
+    -takerProviderEngine: Web3ProviderEngine
+    -makerContractWrappers: ContractWrappers
+    -networkId: number
+    +swapToken(fromToken: any, toToken: any): Promise<string>
+    +makeOrder(fromToken: any, toToken: any): Promise<SignedOrder>
+    +takeOrder(fromToken: any, signedOrder: SignedOrder): Promise<string>
+    +batchFillOrdersAsync(signedOrders: SignedOrder[], tokensToSwap: any[], userAddress: string): Promise<void>
+    -initializeLiquidityProviderAccount(): void
+    -initializeMakerProviderEngine(): void
+    -getMakerProviderEngine(): Web3ProviderEngine
+    -initializeTakerProviderEngine(): void
+    -getTakerProviderEngine(): Promise<Web3ProviderEngine>
+    -initializeMakerContractWrappers(): void
+    -getMakerContractWrappers(): Promise<ContractWrappers>
+    -generateOrder(fromToken: any, toToken: any): Promise<Order>
+    -setNetworkId(networkId: number): void
+    -getNetworkId(): number
+    -getExchangeAddress(networkId: number): Promise<string>
+    -getMakerAddress(): string
+    -getTakerAddress(): Promise<any>
+    -getAssetAmount(token: any): BigNumber
+    -getAssetData(token: any): string
+    -getMakerApprovalHash(toToken: any): Promise<void>
+    -getTakerApprovalHash(fromToken: any): Promise<void>
+    -initializeTakerRpcSubprovider(): void
+    -getTakerRpcSubprovider(): MetamaskSubprovider
+    -initializeMakerRpcSubprovider(): void
+    -getMakerRpcSubprovider(): RPCSubprovider
+}
+class CowriWeb3Provider implements IProvider {
+    -web3: any
+    -request: IRequest
+    -liquidityProvider: ILiquidityProvider
+    +getUserAddress(): Promise<string>
+    +getShellLedgerContract(): Promise<any>
+    +getCurrentUser(): Promise<any>
+    +updateUser(user: any): Promise<any>
+    +mintUser(user: any): Promise<any>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<any>
+    +validateToken(tokenAddress: string): Promise<any>
+    +getUser(accountAddress: string): Promise<any>
+    +getMaxShellSize(): Promise<number>
+    +setPlatform(platform: any): void
+    -swapTokens(receiverUser: any, transaction: any, zeroX: any): Promise<any[]>
+    -buildConsolidatedTokens(allTokens: any[]): Map<string, any>
+    -getAccountTokenBalance(accountAddress: string, tokenAddress: string): Promise<BigNumber>
+    -getTokenMetadata(tokenAddress: string): Promise<any>
+    -getProvider(networkId: number): any
+    -waitForBlockNumber(targetBlockNumber: number): Promise<void>
+    -getCurrentBlockNumber(): Promise<any>
+    -pause(millis: number): Promise<void>
+    -doesLiquidityProviderHaveEnoughGas(liquidityProviderAddress: string, numOfTransactions: number): Promise<boolean>
+    -sendTokens(senderUser: any, consolidatedTokens: Map<string, any>, receiverAddress: string): Promise<void>
+    -{static} contract: any
+}
+class AxiosRequest implements IRequest {
+    +post(url: string, payload: any): Promise<any>
+    +get(url: string): Promise<any>
+}
+class ZeroXApiLiquidityProvider implements ILiquidityProvider {
+    -request: IRequest
+    +isEnoughLiquidity(tokenArray?: any[], config?: any): Promise<boolean>
+    +requestSwap(takerAddress: string, fromToken: any, toToken: any, config?: any): Promise<any>
+}
+class default {
+    -provider: IProvider
+    +getCurrentUser(): Promise<any>
+    +getUser(userAddress: string): Promise<any>
+    +updateUser(user: any): Promise<any>
+    +getMaxShellSize(): Promise<number>
+    +mintUser(user: any): Promise<any>
+    +sendCowri(receiverAddress: string, amount: BigNumber): Promise<any>
+    +validateToken(tokenAddress: string): Promise<any>
+}
+@enduml

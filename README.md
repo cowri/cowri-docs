@@ -1,2 +1,9 @@
-# cowri-docs
-Cowri Documentation
+# Cowri Introduction
+
+Our name, “Cowri,” was inspired by the earliest form of money in human history, the cowry shell. We chose this name because it reminds us that although the shape of money changes over time - from shells, to coins, to computer code - the importance of money is eternal.
+
+Cowri’s goal is to create a stable and liquid store of value accessible to anyone on the internet - i.e. “internet money”. Stablecoins, cryptocurrency whose price is pegged to a stable value, typically the US dollar, are poised to become the default means of storing and transacting value on public blockchains. The aggregate value of the top five stablecoins available on the Ethereum blockchain (TrueUSD, USD Coin, Paxos, Gemini and Dai) increased by a factor of five in the last half of 2018, which was otherwise a bear market for cryptocurrency. If this growth rate continues, stablecoins will constitute 20% of the global money supply ($7 trillion) within the next 3-5 years.
+
+Despite their potential, stablecoins on their own cannot become internet money. The market is simply too fragmented. Either there will be many competing stablecoins, which will be too complicated and inefficient. Or, there will be a single monopoly stablecoin, which creates an intolerable amount of centralization in an otherwise decentralized system.
+
+Cowri has created a protocol that allows stablecoins to interoperate, the Cowri shell protocol. With our decentralized protocol, users can hold and transact any number of different stablecoins as if they were using a single currency. The Cowri shell protocol can even accommodate users if they prefer completely different currencies. In effect, our platform creates internet money without issuing or holding any tokens or financial assets.
