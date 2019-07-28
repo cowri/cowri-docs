@@ -1,7 +1,7 @@
 {
-  "name": "cowri-gitbook",
+  "name": "cowri-docs",
   "version": "1.0.0",
-  "description": "Cowri Gitbook",
+  "description": "Cowri Documentation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
