@@ -10,6 +10,8 @@ Cowri lets users interact with multiple stablecoins as if they were using a sing
 
 **What problem does Cowri solve?**
 
+
+
 **How does Cowri work?**
 
 The best way to learn about how Cowri works is to read our [white paper](insert URL here). Our [architecture overview](insert URL here) is also a good resource. In short, the Cowri Shell Protocol has three main components: shell ledger, shell manager and liquidity pool. The shell ledger tracks which stablecoins users will accept. The shell manager contains the logic necessary to ensure users always send and receive the correct stablecoins. And the liquidity pool facilitates swaps between stablecoins when necessary. 
@@ -72,8 +74,8 @@ If a central bank issued their own stablecoin, they would expose themselves dire
 
 **I'm a user, how can I get access to Cowri?**
 
+For now, Cowri is just on Kovan, an Ethereum test net. You can see our user-facing demo [here](https://demo.cowri.io)
+
 **I'm a developer, how can I integrate Cowri's protocol into my project?**
 
-We want Cowri to be as easy as possible to integrate into your project. To that end, we have built [an SDK](insert URL for developer docs) for easy integration into React applications. We also have a [tutorial for developers](developer tutorial URL).  
-
-**How do I tell a friend about Cowri?**
+We want Cowri to be as easy as possible to integrate into your project. To that end, we have built [an SDK](insert URL for developer docs) for easy integration into React applications. We also have a [tutorial for developers](developer tutorial URL). Right now, we are deployed on Kovan, an Ethereum test net.
