@@ -6,7 +6,9 @@ Cowri lets users interact with multiple stablecoins as if they were using a sing
 
 **What problem does Cowri solve?**
 
-Stablecoin fragmentation. (explain)
+Cowri reduces stablecoin fragmentation. In order for Internet Money to become a reality, we need a stable and liquid medium of exchange existing natively on a public blockchain. Stablecoins per se cannot fulfill that role because the market is just too fragmented. Imagine buying coffee and having to first argue with the shop over which of the two hundred stablecoins to use? Managing even a handful of different stablecoin balances will be prohibitive for users.
+
+Additionally, a fragmented stablecoin market makes decentralized finance (DeFi) more fragile. Stablecoins are intrinsic to the working of many DeFi protocols and are at the heart of the ecosystem. Because these protocols rely on stablecoins, and these protocols rely on each other, the entire house of cards could collapse if only one of the stablecoins loses its peg. E.g., DeFi protocol 1 relies on DeFi protocol 2 which in turn relies on DeFi protocol 3 which relies on a Stablecoin A. If that one stablecoin loses its peg, all three protocols are at risk.
 
 **What value does Cowri offer to the crypto ecosystem?**
 
