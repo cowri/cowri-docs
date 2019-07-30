@@ -74,7 +74,7 @@ In contrast, meta-stablecoins increase market fragmentation. Suppose there are t
 
 **I'm a user, how can I get access to Cowri?**
 
-For now, Cowri is just on Kovan, an Ethereum test net. You can see our user-facing demo [here](https://demo.cowri.io)
+For now, Cowri is just on Kovan, an Ethereum test net. You can see our user-facing demo [here](https://demo.cowri.io).
 
 **I'm a developer, how can I integrate Cowri's protocol into my project?**
 
