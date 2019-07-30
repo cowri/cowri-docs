@@ -1,7 +1,3 @@
-**What is a stablecoin?**
-
-A stablecoin is a cryptocurrency whose value is pegged to a stable reference asset, typically USD. There are five main stablecoins in circulation, at the moment: Tether, USD Coin, TrueUSD, Paxos and Dai. USD Coin, TrueUSD and Paxos are backed by fiat deposits held in custodial bank accounts. Dai is backed by ether locked up in a smart contract. Cowri does not support Tether because the current version of the protocol only works for ERC-20 tokens. Beyond these five stablecoins, there are hundreds of additional stablecoin projects.
-
 **What is Cowri?**
 
 Cowri's goal is to create Internet Money by building a stable and liquid medium of exchange accessible to anyone. The building blocks for this medium of exchange are stablecoins. Individually, a stablecoin is limited. But if they work in unison, they become quite powerful. The Cowri Shell Protocol unifies an arbitrary number of stablecoins into a coherent monetary system.
@@ -9,6 +5,22 @@ Cowri's goal is to create Internet Money by building a stable and liquid medium 
 Cowri lets users interact with multiple stablecoins as if they were using a single currency. The Cowri Shell Protocol is based on a set of logical procedures that ensure users always receive a stablecoin they are willing to accept. Users of the protocol need not agree on which stablecoins to hold. You could say that Cowri is a "stablecoin interoperability protocol."
 
 **What problem does Cowri solve?**
+
+Cowri reduces stablecoin fragmentation. In order for Internet Money to become a reality, we need a stable and liquid medium of exchange existing natively on a public blockchain. Stablecoins per se cannot fulfill that role because the market is just too fragmented. Imagine buying coffee and having to first argue with the shop over which of the two hundred stablecoins to use? Managing even a handful of different stablecoin balances will be prohibitive for users.
+
+Additionally, a fragmented stablecoin market makes decentralized finance (DeFi) more fragile. Stablecoins are intrinsic to the working of many DeFi protocols and are at the heart of the ecosystem. Because these protocols rely on stablecoins, and these protocols rely on each other, the entire house of cards could collapse if only one of the stablecoins loses its peg. E.g., DeFi protocol 1 relies on DeFi protocol 2 which in turn relies on DeFi protocol 3 which relies on a Stablecoin A. If that one stablecoin loses its peg, all three protocols are at risk.
+
+**What value does Cowri offer to the crypto ecosystem?**
+
+Cowri mitigates the costs of stablecoin fragmentation for end-users, developers and other DeFi protocols. For end-users, Cowri provides a simple and intuitive way to send, receive and hold stablecoins. The complexity of managing individual balances is abstracted away.
+
+For developers, Cowri allows them to build stablecoin agnostic projects. With Cowri, a developer does not have to make decisions as to which stablecoins to support, nor do they have to build the infrastructure to support multiple stablecoins. 
+
+DeFi protocols can directly tap into Cowri's on-chain infrastructure. The Cowri liquidity pool allows for efficient stablecoin-to-stablecoin swaps, without the need for an intermediate asset. Additionally, any number of stablecoin swaps or sends can be batched into a single, atomic transaction. With this infrastructure, DeFi protocols can autonomously compose stablecoin transactions of arbitrary complexity.
+
+**What kind of use cases can Cowri fulfill?**
+
+Cowri can be used in the same way as any individual stablecoin.
 
 **How does Cowri work?**
 
@@ -30,30 +42,19 @@ In most cases, the transaction costs will be less than $0.25, the typical price 
 
 The distinction is similar to Bitcoin vs. bitcoin, where Bitcoin is the protocol and bitcoin is the currency. In our case, Cowri with an uppercase "C" refers to the protocol and cowri with a lowercase "c" refers to the money transferred via the protocol. E.g., you can use Cowri to send $100 of cowri to your friend.
 
-**What kind of use cases can Cowri fulfill?**
-
-Cowri can be used in the same way as any individual stablecoin.
-
-**What value does Cowri offer to the crypto ecosystem?**
-
-Cowri mitigates the costs of stablecoin fragmentation for end-users, developers and other DeFi protocols. For end-users, Cowri provides a simple and intuitive way to send, receive and hold stablecoins. The complexity of managing individual balances is abstracted away.
-
-For developers, Cowri allows them to build stablecoin agnostic projects. With Cowri, a developer does not have to make decisions as to which stablecoins to support, nor do they have to build the infrastructure to support multiple stablecoins. 
-
-DeFi protocols can directly tap into Cowri's on-chain infrastructure. The Cowri liquidity pool allows for efficient stablecoin-to-stablecoin swaps, without the need for an intermediate asset. Additionally, any number of stablecoin swaps or sends can be batched into a single, atomic transaction. With this infrastructure, DeFi protocols can autonomously compose stablecoin transactions of arbitrary complexity.
-
-
 **Does Cowri have a native token?**
 
 No. Cowri does not have a native nor does it take custody of users' assets. The on-chain components of our open source protocol run on smart contracts. The off-chain component can run locally on users' devices. 
 
-**How does Cowri compare to a meta-stablecoin?**
+**What is a stablecoin?**
 
-A "meta-stablecoin" is a crypto token that is backed by a reserve of other stablecoins held in a smart contract. The smart contract has a set of rules and procedures for how stablecoins can be redeemed and how new meta-stablecoins can be issued. 
+A stablecoin is a cryptocurrency whose value is pegged to a stable reference asset, typically USD. There are five main stablecoins in circulation, at the moment: Tether, USD Coin, TrueUSD, Paxos and Dai. USD Coin, TrueUSD and Paxos are backed by fiat deposits held in custodial bank accounts. Dai is backed by ether locked up in a smart contract. Cowri does not support Tether because the current version of the protocol only works for ERC-20 tokens. Beyond these five stablecoins, there are hundreds of additional stablecoin projects.
 
-Unlike meta-stablecoins, Cowri does not issue a secondary token. Instead, Cowri is a protocol to help unify many different stablecoins into a common system. People need not even agree on what stablecoins to use. 
+**Why won't central banks issue their own stablecoin?**
 
-In contrast, meta-stablecoins increase market fragmentation. Suppose there are three stablecoins in circulation: Stablecoin A, Stablecoin B and Stablecoin C. A developer builds a meta-stablecoin, Stablecoin D out of tokens A, B and C. Now there are four stablecoins, whereas previously there were only three. But with the Cowri Shell Protocol, all four stablecoins can seamlessly interoperate.
+A better question to ask is why do people have to hold deposits in retail banks instead of central banks, and will the rise of stablecoins change this calculus? The short answer to the latter question: no. Central banks are run by technocrats and are not disposed to deal directly with customers. Thus, they prefer to implement monetary policy by managing the underlying banking system. Private enterprise are expected to offer customer-facing services. 
+
+If a central bank issued their own stablecoin, they would expose themselves directly to customers. It would also require bureaucrats to become smart contract developers. It is unlikely central banks will be proactive in making such a transition. More likely, central banks will require stablecoin issuers to store their fiat deposits at the central bank, much like they do in the current banking system. That way, the central bank can retain control of the underlying monetary system and delegate customer-facing roles to the private sector.  
 
 **What happens to Cowri if a stablecoin permanently loses its peg?**
 
@@ -63,17 +64,18 @@ In terms of the overall protocol, the main risk is to the stablecoin liquidity p
 
 As the protocol grows, the need to mitigate the effects of a broken stablecoin will only increase. This problem is by no means unique to Cowri and has been a perennial shortcoming of any financial system. The only solution is for there to be a buyer of last resort, an institution with the means and mandate to provide liquidity when there is a systemic threat to the system. A big area of future work for Cowri is designing such a system that can provide some measure of insurance for users and liquidity providers in the event of a broken stablecoin.
 
-**Why won't central banks issue their own stablecoin?**
+**How does Cowri compare to a meta-stablecoin?**
 
-A better question to ask is why do people have to hold deposits in retail banks instead of central banks, and will the rise of stablecoins change this calculus? The short answer to the latter question: no. Central banks are run by technocrats and are not disposed to deal directly with customers. Thus, they prefer to implement monetary policy by managing the underlying banking system. Private enterprise are expected to offer customer-facing services. 
+A "meta-stablecoin" is a crypto token that is backed by a reserve of other stablecoins held in a smart contract. The smart contract has a set of rules and procedures for how stablecoins can be redeemed and how new meta-stablecoins can be issued. 
 
-If a central bank issued their own stablecoin, they would expose themselves directly to customers. It would also require bureaucrats to become smart contract developers. It is unlikely central banks will be proactive in making such a transition. More likely, central banks will require stablecoin issuers to store their fiat deposits at the central bank, much like they do in the current banking system. That way, the central bank can retain control of the underlying monetary system and delegate customer-facing roles to the private sector.  
+Unlike meta-stablecoins, Cowri does not issue a secondary token. Instead, Cowri is a protocol to help unify many different stablecoins into a common system. People need not even agree on what stablecoins to use. 
 
+In contrast, meta-stablecoins increase market fragmentation. Suppose there are three stablecoins in circulation: Stablecoin A, Stablecoin B and Stablecoin C. A developer builds a meta-stablecoin, Stablecoin D out of tokens A, B and C. Now there are four stablecoins, whereas previously there were only three. But with the Cowri Shell Protocol, all four stablecoins can seamlessly interoperate.
 
 **I'm a user, how can I get access to Cowri?**
 
+For now, Cowri is just on Kovan, an Ethereum test net. You can see our user-facing demo [here](https://demo.cowri.io).
+
 **I'm a developer, how can I integrate Cowri's protocol into my project?**
 
-We want Cowri to be as easy as possible to integrate into your project. To that end, we have built [an SDK](insert URL for developer docs) for easy integration into React applications. We also have a [tutorial for developers](developer tutorial URL).  
-
-**How do I tell a friend about Cowri?**
+We want Cowri to be as easy as possible to integrate into your project. To that end, we have built [an SDK](insert URL for developer docs) for easy integration into React applications. We also have a [tutorial for developers](developer tutorial URL). Right now, we are deployed on Kovan, an Ethereum test net.
