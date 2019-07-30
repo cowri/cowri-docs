@@ -10,7 +10,19 @@ Cowri lets users interact with multiple stablecoins as if they were using a sing
 
 **What problem does Cowri solve?**
 
+Stablecoin fragmentation. (explain)
 
+**What value does Cowri offer to the crypto ecosystem?**
+
+Cowri mitigates the costs of stablecoin fragmentation for end-users, developers and other DeFi protocols. For end-users, Cowri provides a simple and intuitive way to send, receive and hold stablecoins. The complexity of managing individual balances is abstracted away.
+
+For developers, Cowri allows them to build stablecoin agnostic projects. With Cowri, a developer does not have to make decisions as to which stablecoins to support, nor do they have to build the infrastructure to support multiple stablecoins. 
+
+DeFi protocols can directly tap into Cowri's on-chain infrastructure. The Cowri liquidity pool allows for efficient stablecoin-to-stablecoin swaps, without the need for an intermediate asset. Additionally, any number of stablecoin swaps or sends can be batched into a single, atomic transaction. With this infrastructure, DeFi protocols can autonomously compose stablecoin transactions of arbitrary complexity.
+
+**What kind of use cases can Cowri fulfill?**
+
+Cowri can be used in the same way as any individual stablecoin.
 
 **How does Cowri work?**
 
@@ -31,19 +43,6 @@ In most cases, the transaction costs will be less than $0.25, the typical price 
 **Cowri vs. cowri**
 
 The distinction is similar to Bitcoin vs. bitcoin, where Bitcoin is the protocol and bitcoin is the currency. In our case, Cowri with an uppercase "C" refers to the protocol and cowri with a lowercase "c" refers to the money transferred via the protocol. E.g., you can use Cowri to send $100 of cowri to your friend.
-
-**What kind of use cases can Cowri fulfill?**
-
-Cowri can be used in the same way as any individual stablecoin.
-
-**What value does Cowri offer to the crypto ecosystem?**
-
-Cowri mitigates the costs of stablecoin fragmentation for end-users, developers and other DeFi protocols. For end-users, Cowri provides a simple and intuitive way to send, receive and hold stablecoins. The complexity of managing individual balances is abstracted away.
-
-For developers, Cowri allows them to build stablecoin agnostic projects. With Cowri, a developer does not have to make decisions as to which stablecoins to support, nor do they have to build the infrastructure to support multiple stablecoins. 
-
-DeFi protocols can directly tap into Cowri's on-chain infrastructure. The Cowri liquidity pool allows for efficient stablecoin-to-stablecoin swaps, without the need for an intermediate asset. Additionally, any number of stablecoin swaps or sends can be batched into a single, atomic transaction. With this infrastructure, DeFi protocols can autonomously compose stablecoin transactions of arbitrary complexity.
-
 
 **Does Cowri have a native token?**
 
