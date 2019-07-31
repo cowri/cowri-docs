@@ -2,7 +2,20 @@
 
 The goal of this project is to create Internet Money by building a stable and liquid medium of exchange accessible to anyone. This medium of exchange will be a decentralized protocol that unifies stablecoins (i.e. cryptocurrency pegged to a stable asset, usually USD) into a coherent monetary system. The Cowri Shell Protocol will not issue any tokens of its own and does not take custody of users' assets. 
 
-The problem with stablecoins is that they are highly fragmented - there are five major stablecoins in circulation along with hundreds of minor currencies. This fragmentation creates problems in three areas:
+## Stablecoin fragmentation
+
+The problem with stablecoins is that they are highly fragmented - there are five major stablecoins in circulation along with hundreds of minor currencies. Stablecoin fragmentation is bad for end-users, developers and decentralized finance (DeFi) protocols. For end-users, dealing with the complexity of transacting with many different stablecoin will be prohibitively difficult. Imagine keeping track of dozens if not hundreds of different stablecoins in your wallet, just to make simple payments? Developers have an even harder challenge since they will have to manage the complexity of stablecoin payments across their entire platform. 
+
+The DeFi ecosystem is a network of protocols each building on top of the other. Stablecoins will likely be the primary means of settlement withing and between protocols. Fragmentation in the stablecoin market will increase settlement costs in DeFi. Fragmentation also increases the systemic risk posed by a broken stablecoin peg. 
+
+## The Cowri Shell Protocol
+
+To address the needs of end-users, the protocol creates a seamless and intuitive user experience when transacting with multiple stablecoins. The user need not manage individual balances. The sender and receiver need not even agree on which stablecoins to use. See our [demo](https://demo.cowri.io) and our [user tutorial.](insert url here) For developers, Cowri has an SDK that makes integration between Cowri and your project simple and easy. Check out our [developer guide](insert url here) and [tutorial.](insert url here)
+
+For DeFi, we are building a liquidity pool optimized for stablecoin-to-stablecoin trades. This liquidity pool is designed to be highly capital efficient, exists entirely on-chain and allows liquidity providers to select which tokens they want exposure to. To learn more about the liquidity pool and how it fits into the broader Cowri Shell Protocol, see the [architecture section.](insert url)
+
+
+This fragmentation creates problems in three areas:
 
    (1) Bad end-user experience
    (2) Prohibitively complicated for developers to integrate stablecoins payments into their projects
