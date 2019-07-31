@@ -2,7 +2,7 @@
 
 ## Version 0.2.0
 
-![v0.2 Architecture](../img/v0.2 Architecture.png)
+![v0.2 Architecture]("../img/v0.2 Architecture.png")
 
 Version 0.2.0 of the Cowri architecture is the architecture in place until the on-chain Cowri protocol has finished development. It has been built in such a way that the current off-chain logic of the liquidity provider can easily be replaced with the on-chain protocol once it is completed, so it is important to understand that while version 0.2.0 is functional, certain components will be replaced. Until then, version 0.2.0 consists of the following modules:
 
