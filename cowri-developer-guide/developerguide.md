@@ -4,7 +4,7 @@
 
 Cowri consists of the following components
 
-![Cowri Components](../.gitbook/assets/overview.png)
+![Cowri v0.2 architecture](../.gitbook/assets/architecture-v0.2.svg)
 
 ## [Cowri Protocol](https://github.com/cowri/shell-manager)
 

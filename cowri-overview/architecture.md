@@ -4,7 +4,7 @@ The current version \(v0.2\) of the Cowri Shell Protocol built a stablecoin liqu
 
 ## Version 0.2.0
 
-\[insert diagram here\]
+![](../.gitbook/assets/architecture-v0.2%20%281%29.svg)
 
 Version 0.2 is the architecture in place until version 1.0 of the protocol has finished development. It is live on the Ethereum test net, Kovan. It has been built in such a way that the current off-chain logic of the liquidity provider can easily be replaced with the on-chain protocol once it is completed, so it is important to understand that while version 0.2 is functional, certain components will be replaced. Version 0.2 consists of the following modules:
 
@@ -42,7 +42,7 @@ The Liquidity Provider is also a standalone API service built on Express that cu
 
 ## Version 1.0
 
-\[insert diagram here\]
+![](../.gitbook/assets/architecture-v1.0.svg)
 
 Version 1.0 is the future architecture being developed. It currently is not deployed on any test net, unlike version 0.2. This version contains the following components:
 

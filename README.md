@@ -1,3 +1,7 @@
+---
+description: Welcome to Cowri Docs!
+---
+
 # Introduction
 
 Cowri's goal is to create Internet Money by building a stable and liquid medium of exchange accessible to anyone. The Cowri Shell Protocol accomplishes this by unifying stablecoins into a coherent monetary system. The protocol does not take custody of users' assets and does not rely on issuing any tokens.

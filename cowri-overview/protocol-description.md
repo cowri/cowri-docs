@@ -17,11 +17,11 @@ If Alice wants to pay Bob $50 with cowri, there are two possible scenarios:
 
 In the first scenario, Alice can complete the payment by sending some combination of stablecoins already in her wallet that sum up to $50.
 
-\[insert scenario 1 diagram here\]
+![Alice and Bob both accept: USD Coin, TrueUSD and Dai](../.gitbook/assets/shell-diagram-scenario-1.svg)
 
 In the second scenario, Alice will have to use an intermediary, Claire. Claire has a shell that overlaps with both Alice and Bob. Alice sends $50 \(plus a fee\) of stablecoins to Claire, Claire then sends $50 to Bob. 
 
-\[insert scenario 2 diagram here\]
+![Alice and Claire both accept TrueUSD; Claire and Bob both accept Paxos](../.gitbook/assets/shell-diagram-scenario-2.svg)
 
 ## Protocol implementation
 
@@ -38,16 +38,16 @@ The shell ledger tracks which stablecoins a user has in their shell \(i.e. which
 To see how the protocol works, consider Alice paying Bob $50 in cowri. If Alice and Bob have the same stablecoin shell, then the transaction will follow these steps:
 
 1. Alice’s shell manager queries the shell ledger for Bob’s shell
-2. Alice sends to Bob $50 worth of stablecoins he accepts 
+2. Alice sends to Bob $50 worth of stablecoin A 
 
-\[insert diagram here\]
+![Sending cowri with overlapping](../.gitbook/assets/tx-flow-scenario-1.svg)
 
 If Alice and Bob do not have the same stablecoin shell, then the transaction will follow these steps:
 
 1. Alice’s shell manager queries the shell ledger for Bob’s shell
 2. The shell manager queries the liquidity pool for swap rates
 3. The shell manager swaps stablecoins
-4. The shell manager sends $50 worth of stablecoins to Bob
+4. The shell manager sends $50 worth of stablecoin B to Bob
 
-\[insert diagram here\]
+![Sending cowri with non-overlapping shells](../.gitbook/assets/tx-flow-scenario-2.svg)
 
