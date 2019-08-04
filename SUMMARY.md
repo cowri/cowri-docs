@@ -1,33 +1,34 @@
-# Summary
+# Table of contents
+
+* [Introduction](README.md)
 
 ## Cowri Overview
 
-* [Architecture](./cowri-architecture/architecture.md)
-* [Future Work](./cowri-architecture/future.md)
+* [Architecture](cowri-overview/architecture.md)
+* [Future Work](cowri-overview/future.md)
 
 ## Cowri User Guide
 
-* [Tutorial](./user-guide/1-User-Tutorial.md)
-* [Frequently Asked Questions](./user-guide/2-FAQ.md)
+* [Tutorial](cowri-user-guide/1-user-tutorial.md)
+* [Frequently Asked Questions](cowri-user-guide/2-faq.md)
 
 ## Cowri Developer Guide
 
-* [Developer Toolkit Overview](./developer-guide/developerGuide.md)
-* [Setup](./developer-guide/installation.md)
-* [Cowri Crab Corner Tutorial](./developer-guide/cowri-tutorial.md)
-* [Master Data](./developer-guide/masterData.md)
-* [Troubleshooting](./developer-guide/troubleshooting.md)
+* [Developer Toolkit Overview](cowri-developer-guide/developerguide.md)
+* [Setup](cowri-developer-guide/installation.md)
+* [Cowri Crab Corner Tutorial](cowri-developer-guide/cowri-tutorial.md)
+* [Master Data](cowri-developer-guide/masterdata.md)
+* [Troubleshooting](cowri-developer-guide/troubleshooting.md)
 
 ## Cowri Developer Reference
-* [Cowri DApp SDK](./cowri-reference/classes/_shellmanager_.shellmanager.md)
+
+* [Cowri DApp SDK](cowri-developer-reference/_shellmanager_.shellmanager.md)
 
 ## Cowri Community
 
-* Community
+* [Community](cowri-community/community.md)
 
 ## Cowri Reference Material
 
-* Reference Material
-
-
+* [Reference Material](cowri-reference-material/reference-material.md)
 

@@ -1,28 +1,25 @@
-# Modifying the Petshop App to pay with Cowri
+# Cowri Crab Corner Tutorial
 
-**[Follow this Tutorial](https://www.trufflesuite.com/tutorials/pet-shop)**
+[**Follow this Tutorial**](https://www.trufflesuite.com/tutorials/pet-shop)
 
-**[Solutions can be found here](https://github.com/trufflesuite/pet-shop-tutorial)**
+[**Solutions can be found here**](https://github.com/trufflesuite/pet-shop-tutorial)
 
-**[Tutorial Markdown Documentation can be found here](https://github.com/trufflesuite/trufflesuite.com/blob/master/src/tutorials/pet-shop.md)
+\*\*[Tutorial Markdown Documentation can be found here](https://github.com/trufflesuite/trufflesuite.com/blob/master/src/tutorials/pet-shop.md)
 
-![Ethereum Pet Shop](../img/pet-shop/petshop.png)
+![Ethereum Pet Shop](../.gitbook/assets/petshop.png)
 
 This tutorial will take you through the process of building your first dapp---an adoption tracking system for a pet shop!
 
 This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.
 
-<p class="alert alert-info">
-<strong>Note</strong>: For Ethereum basics, please read the Truffle [Ethereum Overview](/tutorials/ethereum-overview) tutorial before proceeding.
-</p>
+ **Note**: For Ethereum basics, please read the Truffle \[Ethereum Overview\]\(/tutorials/ethereum-overview\) tutorial before proceeding.
 
 In this tutorial we will be covering:
 
 1. Setting up the development environment
-1. Creating a Truffle project using a Truffle Box
-1. Adding Send Cowri to your Application
-1. Interacting with the dapp in a browser
-
+2. Creating a Truffle project using a Truffle Box
+3. Adding Send Cowri to your Application
+4. Interacting with the dapp in a browser
 
 ## Background
 
@@ -34,42 +31,38 @@ The website structure and styling will be supplied. **Our job is to write the sm
 
 There are a few technical requirements before we start. Please install the following:
 
-*   [Node.js v8+ LTS and npm](https://nodejs.org/en/) (comes with Node)
-*   [Git](https://git-scm.com/)
+* [Node.js v8+ LTS and npm](https://nodejs.org/en/) \(comes with Node\)
+* [Git](https://git-scm.com/)
 
 Once we have those installed, we only need one command to install Truffle:
 
-```shell
+```text
 npm install -g truffle
 ```
 
 To verify that Truffle is installed properly, type `truffle version` on a terminal. If you see an error, make sure that your npm modules are added to your path.
 
-We also will be using [Ganache](/ganache), a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. You can download Ganache by navigating to http://truffleframework.com/ganache and clicking the "Download" button.
+We also will be using [Ganache](https://github.com/cowri/cowri-docs/tree/04d9b6dec5ee45ed731242763b10787dc6964125/ganache/README.md), a personal blockchain for Ethereum development you can use to deploy contracts, develop applications, and run tests. You can download Ganache by navigating to [http://truffleframework.com/ganache](http://truffleframework.com/ganache) and clicking the "Download" button.
 
-<p class="alert alert-info">
-<strong>Note</strong>: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle's built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
-</p>
+ **Note**: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle's built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
 
 ## Creating a Truffle project using a Truffle Box
 
 1. Truffle initializes in the current directory, so first create a directory in your development folder of choice and then moving inside it.
 
-  ```shell
-  mkdir pet-shop-tutorial
+   ```text
+   mkdir pet-shop-tutorial
 
-  cd pet-shop-tutorial
-  ```
+   cd pet-shop-tutorial
+   ```
 
-1. We've created a special [Truffle Box](/boxes) just for this tutorial called `pet-shop`, which includes the basic project structure as well as code for the user interface. Use the `truffle unbox` command to unpack this Truffle Box.
+2. We've created a special [Truffle Box](https://github.com/cowri/cowri-docs/tree/04d9b6dec5ee45ed731242763b10787dc6964125/boxes/README.md) just for this tutorial called `pet-shop`, which includes the basic project structure as well as code for the user interface. Use the `truffle unbox` command to unpack this Truffle Box.
 
-  ```shell
-  truffle unbox pet-shop
-  ```
+   ```text
+   truffle unbox pet-shop
+   ```
 
-<p class="alert alert-info">
-  <strong>Note</strong>: Truffle can be initialized a few different ways. Another useful initialization command is `truffle init`, which creates an empty Truffle project with no example contracts included. For more information, please see the documentation on [Creating a project](/docs/getting_started/project).
-</p>
+ **Note**: Truffle can be initialized a few different ways. Another useful initialization command is \`truffle init\`, which creates an empty Truffle project with no example contracts included. For more information, please see the documentation on \[Creating a project\]\(/docs/getting\_started/project\).
 
 ### Directory structure
 
@@ -82,14 +75,11 @@ The default Truffle directory structure contains the following:
 
 The `pet-shop` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
 
-
 ### Instantiating web3
 
 1. Open `/src/js/app.js` in a text editor.
-
-1. Examine the file. Note that there is a global `App` object to manage our application, load in the pet data in `init()` and then call the function `initWeb3()`. The [web3 JavaScript library](https://github.com/ethereum/web3.js/) interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.
-
-1. Remove the multi-line comment from within `initWeb3` and replace it with the following:
+2. Examine the file. Note that there is a global `App` object to manage our application, load in the pet data in `init()` and then call the function `initWeb3()`. The [web3 JavaScript library](https://github.com/ethereum/web3.js/) interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.
+3. Remove the multi-line comment from within `initWeb3` and replace it with the following:
 
    ```javascript
    // Modern dapp browsers...
@@ -117,10 +107,8 @@ The `pet-shop` Truffle Box has extra files and folders in it, but we won't worry
 Things to notice:
 
 * First, we check if we are using modern dapp browsers or the more recent versions of [MetaMask](https://github.com/MetaMask) where an `ethereum` provider is injected into the `window` object. If so, we use it to create our web3 object, but we also need to explicitly request access to the accounts with `ethereum.enable()`.
-
-* If the `ethereum` object does not exist, we then check for an injected `web3` instance. If it exists, this indicates that we are using an older dapp browser (like [Mist](https://github.com/ethereum/mist) or an older version of MetaMask). If so, we get its provider and use it to create our web3 object.
-
-* If no injected web3 instance is present, we create our web3 object based on our local provider. (This fallback is fine for development environments, but insecure and not suitable for production.)
+* If the `ethereum` object does not exist, we then check for an injected `web3` instance. If it exists, this indicates that we are using an older dapp browser \(like [Mist](https://github.com/ethereum/mist) or an older version of MetaMask\). If so, we get its provider and use it to create our web3 object.
+* If no injected web3 instance is present, we create our web3 object based on our local provider. \(This fallback is fine for development environments, but insecure and not suitable for production.\)
 
 ### Instantiating the contract
 
@@ -144,12 +132,9 @@ Now that we can interact with Ethereum via web3, we need to instantiate our smar
 
 Things to notice:
 
-* We first retrieve the artifact file for our smart contract. **Artifacts are information about our contract such as its deployed address and Application Binary Interface (ABI)**. **The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.**
-
+* We first retrieve the artifact file for our smart contract. **Artifacts are information about our contract such as its deployed address and Application Binary Interface \(ABI\)**. **The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.**
 * Once we have the artifacts in our callback, we pass them to `TruffleContract()`. This creates an instance of the contract we can interact with.
-
 * With our contract instantiated, we set its web3 provider using the `App.web3Provider` value we stored earlier when setting up web3.
-
 * We then call the app's `markAdopted()` function in case any pets are already adopted from a previous visit. We've encapsulated this in a separate function since we'll need to update the UI any time we make a change to the smart contract's data.
 
 ### Getting The Adopted Pets and Updating The UI
@@ -177,18 +162,13 @@ Things to notice:
 Things to notice:
 
 * We access the deployed `Adoption` contract, then call `getAdopters()` on that instance.
-
 * We first declare the variable `adoptionInstance` outside of the smart contract calls so we can access the instance after initially retrieving it.
-
-* Using **call()** allows us to read data from the blockchain without having to send a full transaction, meaning we won't have to spend any ether.
-
+* Using **call\(\)** allows us to read data from the blockchain without having to send a full transaction, meaning we won't have to spend any ether.
 * After calling `getAdopters()`, we then loop through all of them, checking to see if an address is stored for each pet. Since the array contains address types, Ethereum initializes the array with 16 empty addresses. This is why we check for an empty address string rather than null or other falsey value.
-
 * Once a `petId` with a corresponding address is found, we disable its adopt button and change the button text to "Success", so the user gets some feedback.
-
 * Any errors are logged to the console.
 
-### Handling the adopt() Function
+### Handling the adopt\(\) Function
 
 1. Still in `/src/js/app.js`, remove the multi-line comment from `handleAdopt` and replace it with the following:
 
@@ -218,11 +198,8 @@ Things to notice:
 Things to notice:
 
 * We use web3 to get the user's accounts. In the callback after an error check, we then select the first account.
-
 * From there, we get the deployed contract as we did above and store the instance in `adoptionInstance`. This time though, we're going to send a **transaction** instead of a call. Transactions require a "from" address and have an associated cost. This cost, paid in ether, is called **gas**. The gas cost is the fee for performing computation and/or storing data in a smart contract. We send the transaction by executing the `adopt()` function with both the pet's ID and an object containing the account address, which we stored earlier in `account`.
-
 * The result of sending a transaction is the transaction object. If there are no errors, we proceed to call our `markAdopted()` function to sync the UI with our newly stored data.
-
 
 ## Interacting with the dapp in a browser
 
@@ -233,48 +210,45 @@ Now we're ready to use our dapp!
 The easiest way to interact with our dapp in a browser is through [MetaMask](https://metamask.io/), a browser extension for both Chrome and Firefox.
 
 1. Install MetaMask in your browser.
+2. Once installed, a tab in your browser should open displaying the following:
 
-1. Once installed, a tab in your browser should open displaying the following:
+   ![Welcome to MetaMask](../.gitbook/assets/metamask-welcome.png)
 
-   ![Welcome to MetaMask](../img/pet-shop/metamask-welcome.png "Welcome to MetaMask")
+3. After clicking **Getting Started**, you should see the initial MetaMask screen. Click **Import Wallet**.
 
-1. After clicking **Getting Started**, you should see the initial MetaMask screen. Click **Import Wallet**.
+   ![MetaMask initial screen](../.gitbook/assets/metamask-initial.png)
 
-   ![Initial screen](../img/pet-shop/metamask-initial.png "MetaMask initial screen")
-   
-1. Next, you should see a screen requesting anonymous analytics. Choose to decline or agree.
+4. Next, you should see a screen requesting anonymous analytics. Choose to decline or agree.
 
-   ![Improve MetaMask](../img/pet-shop/metamask-analytics.png "Improve MetaMask")
-   
-1. In the box marked **Wallet Seed**, enter the mnemonic that is displayed in Ganache.
+   ![Improve MetaMask](../.gitbook/assets/metamask-analytics.png)
 
-   <p class="alert alert-danger">
-   **Warning**: Do not use this mnemonic on the main Ethereum network (mainnet). If you send ETH to any account generated from this mnemonic, you will lose it all!
-   </p>
+5. In the box marked **Wallet Seed**, enter the mnemonic that is displayed in Ganache.
+
+    \*\*Warning\*\*: Do not use this mnemonic on the main Ethereum network \(mainnet\). If you send ETH to any account generated from this mnemonic, you will lose it all!
 
    Enter a password below that and click **OK**.
 
-   ![MetaMask seed phrase](../img/pet-shop/metamask-seed.png "MetaMask seed phrase")
-   
-1. If all goes well, MetaMask should display the following screen. Click **All Done**.
+   ![MetaMask seed phrase](../.gitbook/assets/metamask-seed.png)
 
-   ![Congratulations](../img/pet-shop/metamask-congratulations.png "Congratulations")
+6. If all goes well, MetaMask should display the following screen. Click **All Done**.
 
-1. Now we need to connect MetaMask to the blockchain created by Ganache. Click the menu that shows "Main Network" and select **Custom RPC**.
+   ![Congratulations](../.gitbook/assets/metamask-congratulations.png)
 
-   ![MetaMask network menu](../img/pet-shop/metamask-networkmenu.png "MetaMask network menu")
+7. Now we need to connect MetaMask to the blockchain created by Ganache. Click the menu that shows "Main Network" and select **Custom RPC**.
 
-1. In the box titled "New Network" enter `http://127.0.0.1:7545` and click **Save**.
+   ![MetaMask network menu](../.gitbook/assets/metamask-networkmenu.png)
 
-   ![MetaMask Custom RPC](../img/pet-shop/metamask-customrpc.png "MetaMask Custom RPC")
+8. In the box titled "New Network" enter `http://127.0.0.1:7545` and click **Save**.
+
+   ![MetaMask Custom RPC](../.gitbook/assets/metamask-customrpc.png)
 
    The network name at the top will switch to say `http://127.0.0.1:7545`.
 
-1. Click the top-right X to close out of Settings and return to the Accounts page.
+9. Click the top-right X to close out of Settings and return to the Accounts page.
 
    Each account created by Ganache is given 100 ether. You'll notice it's slightly less on the first account because some gas was used when the contract itself was deployed and when the tests were run.
 
-   ![MetaMask account configured](../img/pet-shop/metamask-account1.png "MetaMask account configured")
+   ![MetaMask account configured](../.gitbook/assets/metamask-account1.png)
 
    Configuration is now complete.
 
@@ -282,7 +256,7 @@ The easiest way to interact with our dapp in a browser is through [MetaMask](htt
 
 We can now start a local web server and use the dapp. We're using the `lite-server` library to serve our static files. This shipped with the `pet-shop` Truffle Box, but let's take a look at how it works.
 
-1. Open `bs-config.json` in a text editor (in the project's root directory) and examine the contents:
+1. Open `bs-config.json` in a text editor \(in the project's root directory\) and examine the contents:
 
    ```javascript
    {
@@ -309,36 +283,34 @@ We can now start a local web server and use the dapp. We're using the `lite-serv
 
 1. Start the local web server:
 
-   ```shell
+   ```text
    npm run dev
    ```
 
    The dev server will launch and automatically open a new browser tab containing your dapp.
 
-   ![Pete's Pet Shop](../img/pet-shop/dapp.png "Pete's Pet Shop")
-   
-1. A MetaMask pop-up should appear requesting your approval to allow Pete's Pet Shop to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click **Connect**.
+   !\[Pete's Pet Shop\]\(../img/pet-shop/dapp.png "Pete's Pet Shop"\)
 
-   ![MetaMask approval request](../img/pet-shop/metamask-transactionconfirm.png "MetaMask approval request")
+2. A MetaMask pop-up should appear requesting your approval to allow Pete's Pet Shop to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click **Connect**.
 
-1. To use the dapp, click the **Adopt** button on the pet of your choice.
+   ![MetaMask approval request](../.gitbook/assets/metamask-transactionconfirm.png)
 
-1. You'll be automatically prompted to approve the transaction by MetaMask. Click **Submit** to approve the transaction.
+3. To use the dapp, click the **Adopt** button on the pet of your choice.
+4. You'll be automatically prompted to approve the transaction by MetaMask. Click **Submit** to approve the transaction.
 
-   ![Adoption transaction review](../img/pet-shop/metamask-transactionconfirm.png "Adoption transaction review")
+   ![Adoption transaction review](../.gitbook/assets/metamask-transactionconfirm%20%281%29.png)
 
-1. You'll see the button next to the adopted pet change to say "Success" and become disabled, just as we specified, because the pet has now been adopted.
+5. You'll see the button next to the adopted pet change to say "Success" and become disabled, just as we specified, because the pet has now been adopted.
 
-   ![Adoption success](../img/pet-shop/dapp-success.png "Adoption success")
+   ![Adoption success](../.gitbook/assets/dapp-success.png)
 
-   <p class="alert alert-info">
-   <strong>Note</strong>: If the button doesn't automatically change to say "Success", refreshing the app in the browser should trigger it.
-   </p>
+    **Note**: If the button doesn't automatically change to say "Success", refreshing the app in the browser should trigger it.
 
    And in MetaMask, you'll see the transaction listed:
 
-   ![MetaMask transaction](../img/pet-shop/metamask-transactionsuccess.png "MetaMask transaction")
+   ![MetaMask transaction](../.gitbook/assets/metamask-transactionsuccess.png)
 
    You'll also see the same transaction listed in Ganache under the "Transactions" section.
 
 Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. If you'd like to make your dapp live for others to use, stay tuned for our future tutorial on deploying to the Ropsten testnet.
+
