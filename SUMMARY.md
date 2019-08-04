@@ -4,8 +4,9 @@
 
 ## Cowri Overview
 
+* [Internet Money and Stablecoins](cowri-overview/project-purpose.md)
+* [Protocol Description](cowri-overview/protocol-description.md)
 * [Architecture](cowri-overview/architecture.md)
-* [Future Work](cowri-overview/future.md)
 
 ## Cowri User Guide
 

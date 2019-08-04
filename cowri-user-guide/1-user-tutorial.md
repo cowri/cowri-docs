@@ -1,8 +1,8 @@
 # Tutorial
 
-This tutorial explains how to get started with the Cowri Shell demo app. We built this demo to showcase our protocol. If you would like to learn more about our project, you can read the [white paper](https://docs.cowri.io/whitepaper) or our [FAQs](https://docs.cowri.io/FAQ).
+This tutorial explains how to get started with the [Cowri Shell demo app](https://demo.cowri.io). We built this demo to showcase our protocol. If you would like to learn more about our project, you can read the [white paper](https://docs.cowri.io/whitepaper) or our[ FAQs](2-faq.md).
 
-If you are a developer interested in integrating Cowri into a project, see our [developer guide](https://docs.cowri.io/developer_tutorial).
+If you are a developer interested in integrating Cowri into a project, see our [developer guide](../cowri-developer-guide/developerguide.md).
 
 ## Prerequisites:
 

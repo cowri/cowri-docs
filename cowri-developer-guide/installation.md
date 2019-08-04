@@ -37,7 +37,7 @@ Cowri provides a set of tools for you to run cowri applications locally. These i
 * Cowri faucet
 * Cowri Liqudity provider
 
-  see the [developer guide](developerguide.md) for more detail.
+See the [developer guide](developerguide.md) for more detail.
 
 To run the application locally follow the below steps
 
