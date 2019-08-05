@@ -18,11 +18,11 @@ The shell manager consists of the following two subcomponents:
 
 #### DApp SDK
 
-The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
+The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on [NPM](https://www.npmjs.com/package/@cowri/dapp-sdk) and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
 
 #### Core logic
 
-The core logic is where all of the core business logic takes place. It decomposes a send transaction into a series of stablecoin swaps and sends. These algorithms form the core of the Cowri Shell Protocol. The core logic is  an NPM module as to allow its internal objects to be shared amongst the Faucet, Liquidity Provider, and any other service that would like access to these objects and algorithms.
+The core logic is where all of the core business logic takes place. It decomposes a send transaction into a series of stablecoin swaps and sends. These algorithms form the core of the Cowri Shell Protocol. The core logic is an [NPM module](https://www.npmjs.com/package/@cowri/core) as to allow its internal objects to be shared amongst the Faucet, Liquidity Provider, and any other service that would like access to these objects and algorithms.
 
 ### Liquidity pool
 
@@ -56,11 +56,11 @@ The shell manager consists of the following three subcomponents:
 
 #### DApp SDK
 
-The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
+The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on [NPM](https://www.npmjs.com/package/@cowri/dapp-sdk) and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
 
 #### Core logic
 
-The core logic is where all of the core business logic takes place. It decomposes a send transaction into a series of stablecoin swaps and sends. These algorithms form the core of the Cowri Shell Protocol. The core logic is  an NPM module as to allow its internal objects to be shared amongst the Faucet, Liquidity Provider, and any other service that would like access to these objects and algorithms.
+The core logic is where all of the core business logic takes place. It decomposes a send transaction into a series of stablecoin swaps and sends. These algorithms form the core of the Cowri Shell Protocol. The core logic is an [NPM module](https://www.npmjs.com/package/@cowri/core) as to allow its internal objects to be shared amongst the Faucet, Liquidity Provider, and any other service that would like access to these objects and algorithms.
 
 #### Sequencer
 
