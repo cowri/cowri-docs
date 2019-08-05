@@ -26,11 +26,11 @@ Cowri can be used in the same way as any individual stablecoin. Three primary us
 
 The most promising form of internet commerce for cryptocurrency is online gaming, namely buying and selling video game items, which is already worth $50 billion and is growing rapidly. It makes sense that digital items will be represented as non-fungible tokens \(NFTs\), and will be traded on decentralized market places. Stablecoins will be the medium of choice for payments in video games.
 
-DeFi protocols already hold $500 million in assets on Ethereum. This technology, although less than two years old, will is the future of finance. Just as fiat currency is at the heart of modern financial markets, stablecoins will be at the heart of DeFi. The ecosystem needs a unified stablecoin market to reduce settlement costs and increase financial resilience.
+DeFi protocols already hold $500 million in assets on Ethereum. This technology, although barely two years old, is the future of finance. Just as fiat currency is at the heart of modern financial markets, stablecoins will be at the heart of DeFi. The ecosystem needs a unified stablecoin market to reduce settlement costs and increase financial resilience.
 
 ### **How does Cowri work?**
 
-The best way to learn about how Cowri works is to read our [white paper](https://github.com/cowri/cowri-docs/tree/b8cd1308a8d2f1df9d41b01257e7e3f12327e3fc/user-guide/insert%20URL%20here/README.md). Our [protocol overview](../cowri-overview/protocol-description.md) is also a good resource. In short, the Cowri Shell Protocol has three main components: shell ledger, shell manager and liquidity pool. The shell ledger tracks which stablecoins users will accept. The shell manager contains the logic necessary to ensure users always send and receive the correct stablecoins. And the liquidity pool facilitates swaps between stablecoins when necessary.
+The best way to learn about how Cowri works is to read our **white paper**. Our [protocol overview](../cowri-overview/protocol-description.md) is also a good resource. In short, the Cowri Shell Protocol has three main components: shell ledger, shell manager and liquidity pool. The shell ledger tracks which stablecoins users will accept. The shell manager contains the logic necessary to ensure users always send and receive the correct stablecoins. And the liquidity pool facilitates swaps between stablecoins when necessary.
 
 ### **What is a Cowri "shell"?**
 
@@ -38,11 +38,11 @@ A Cowri "shell" is a list of stablecoins a user is willing to accept. This conce
 
 ### **How do I send cowri?**
 
-Sending cowri is easy. All you need to know is: the Ethereum address of the intended recipient, and the amount you want to send. The act of sending cowri usually takes just one step, just like sending any other token on Ethereum. Occasionally, there may be a second step, if you are sending cowri to a recipient who only accepts stablecoins you do not currently have in your wallet. 
+Sending cowri is easy. All you need to know is the Ethereum address of the intended recipient, and the amount you want to send. The act of sending cowri usually takes just one step, just like sending any other token on Ethereum. Occasionally, there may be a second step, if you are sending cowri to a recipient who only accepts stablecoins you do not currently have in your wallet. 
 
 ### **How much does it cost to send cowri?**
 
-In most cases, the transaction costs will be less than $0.25, the typical price of sending an ERC-20 token on Ethereum. Like any process that requires writing data to a blockchain, sending cowri requires a user to [pay gas fees.](https://education.district0x.io/general-topics/understanding-ethereum/what-is-gas/) The exact gas fees to send cowri depend on a couple of factors. First, it depends on whether the user must first swap some of their current stablecoins for stablecoins accepted by the recipient. Doing so will add gas fees. Second, the cost of sending cowri will depend on how many individual stablecoins a user sends in order to make the full transaction amount. For every different stablecoin sent, the cost increases. Our algorithm has been designed to reduce gas fees by making as few swaps and sending as few stablecoins as possible.
+In most cases, the transaction costs will be less than $0.03, the typical price of sending an ERC-20 token on Ethereum. Like any process that requires writing data to a blockchain, sending cowri requires a user to [pay gas fees.](https://education.district0x.io/general-topics/understanding-ethereum/what-is-gas/) The exact gas fees to send cowri depend on a couple of factors. First, it depends on whether the user must first swap some of their current stablecoins for stablecoins accepted by the recipient. Doing so will add gas fees. Second, the cost of sending cowri will depend on how many individual stablecoins a user sends in order to make the full transaction amount. For every different stablecoin sent, the cost increases. Our algorithm has been designed to reduce gas fees by making as few swaps and sending as few stablecoins as possible.
 
 ### **Cowri vs. cowri**
 

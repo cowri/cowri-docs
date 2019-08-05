@@ -40,7 +40,7 @@ To see how the protocol works, consider Alice paying Bob $50 in cowri. If Alice 
 1. Alice’s shell manager queries the shell ledger for Bob’s shell
 2. Alice sends to Bob $50 worth of stablecoin A 
 
-![Sending cowri with overlapping](../.gitbook/assets/tx-flow-scenario-1.svg)
+![Sending cowri with overlapping shells](../.gitbook/assets/tx-flow-scenario-1.svg)
 
 If Alice and Bob do not have the same stablecoin shell, then the transaction will follow these steps:
 

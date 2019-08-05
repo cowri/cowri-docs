@@ -14,7 +14,7 @@ Cowri consists of the following components
 * Adding and removing tokens from the shell
 * Retrieving and validating tokens in a user's shell
 
-## [Cowri SDK](https://github.com/cowri/cowri/tree/master/sdk)
+## Shell Manager \(SDK\)
 
 The **Cowri SDK** refers to the software development toolkit that is available for use by dapp developers. It includes the [**Cowri DApp SDK**](https://github.com/cowri/cowri/tree/master/sdk/cowri-dapp-sdk), [**Cowri Core**](https://github.com/cowri/cowri/tree/master/sdk/cowri-core), and [**Cowri Send**](https://github.com/cowri/cowri/tree/master/sdk/cowri-send). Each of these components are tools that DApp developers can utilize within their applications for interacting with the Cowri protocol.
 
