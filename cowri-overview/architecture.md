@@ -18,7 +18,7 @@ The shell manager consists of the following two subcomponents:
 
 #### DApp SDK
 
-The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The Cowri DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
+The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
 
 #### Core logic
 
@@ -56,7 +56,7 @@ The shell manager consists of the following three subcomponents:
 
 #### DApp SDK
 
-The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The Cowri DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
+The DApp SDK is the keystone of the Cowri protocol and acts as the central hub for developer interaction with the functions available with Cowri. It interacts with all the other Cowri modules either by calling code directly or interacting with them via network protocols. The DApp SDK is available on NPM and can easily be installed and implemented for any DApp developer to use Cowri in their applications.
 
 #### Core logic
 
