@@ -17,7 +17,7 @@ The setup and installation of Cowri and its back end services can be done in a n
 
 **Docker and Docker Compose (optional)**
 
-The easiest way to bring all Cowri services up by using [Docker Compose](https://docs.docker.com/compose/). This requires the installation of both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) on your local machine. However, if you wish to run the services without usind Docker Compose, that can be done as well. 
+The easiest way to bring all Cowri services up is by using [Docker Compose](https://docs.docker.com/compose/). This requires the installation of both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) on your local machine. However, if you wish to run the services without using Docker Compose, that can be done as well. 
  
 
 ## Running Cowri Demo App Locally
