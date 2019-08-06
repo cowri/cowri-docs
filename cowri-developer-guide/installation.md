@@ -1,78 +1,71 @@
 # Setup
 
-The following guide is designed to get developers up and running as quickly and simply as possible.
+The setup and installation of Cowri and its back end services can be done in a number of ways. Developers have the choice of cloning the repo and starting each service individually (not recommended), bringing the services up using docker-compose, navigating to the [hosted demo website](https://demo.cowri.io), or starting all the services using a shell script from the Github repository (UNIX systems only). This document outlines each of the installation options. 
 
 ## Pre-requisties
 
 **Metamask**
 
-* Install [Metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
-* Create your [Metamask wallet](https://metamask.io/)
+1. Install the [Metamask](https://metamask.io/) browser extension for your browser
+  - If you're new to Metamask, familiarize yourself with this [three and a half minute video](https://youtu.be/ZIGUC9JAAw8)
+2. If you haven't already, create your Metamask wallet
+3. Follow [this article](https://blog.chronologic.network/how-to-get-eth-and-day-on-the-kovan-test-network-f2190076052a) to get test ETH sent to your wallet on Kovan
+4. Familiarize yourself with Cowri and its use of Metamask with the [Cowri Tutorial](../cowri-user-guide/1-user-tutorial.md)
+5. For a more complete Cowri experience, import each of the Cowri test users into Metamask from Cowri's [Master Data](../cowri-developer-guide/masterdata) and, optionally, importing each of Cowri's test ERC20 tokens into each user. 
+  - Information on how to import users into Metamask using their private key can be found [here](https://medium.com/publicaio/how-import-a-wallet-to-your-metamask-account-dcaba25e558d)
+  - **Make sure you are connected to the KOVAN test network in Metamask**
 
-## Running Cowri Demo App - Kovan
+**Docker and Docker Compose (optional)**
 
-**Running the hosted cowri shell application**
+The easiest way to bring all Cowri services up by using [Docker Compose](https://docs.docker.com/compose/). This requires the installation of both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) on your local machine. However, if you wish to run the services without usind Docker Compose, that can be done as well. 
+ 
 
-Cowri Shell can be run by going to [https://demo.cowri.io](https://demo.cowri.io) and then following the [user tutorial](../cowri-user-guide/1-user-tutorial.md).
+## Running Cowri Demo App Locally
 
-**Installing and running cowri shell application - locally** If you wish to see the source code and modify the codebase you may install [cowri-demo-apps](https://github.com/cowri/cowri-demo-apps) locally and run the [Cowri Shell](https://github.com/cowri/cowri-demo-apps/tree/master/cowri-shell).
+### Running using Docker Compose
 
-**1. Download and run the Cowri Shell**
+To run the Cowri Demo application using Docker Compose:
+  1. Download the Cowri [docker-compose.yaml](http://download.cowri.io/docker-compose.yaml)
+    - `wget http://download.cowri.io/docker-compose.yaml)`
+  2. From the same directory as the `docker-compose.yaml` file, run `docker-compose up`
+  3. Once the services are done loading, you can use the Cowri demo application by navigating to `http://localhost:6706` in your browser
 
-```text
-git clone https://github.com/cowri/cowri-demo-apps
-cd cowri-demo-apps/cowri-shell
-npm install
-```
+### Running using Shell Scripts (UNIX systems only)
 
-**2. Follow the** [**user tutorial**](../cowri-user-guide/1-user-tutorial.md) **to familiarize yourself with Cowri.**
+To run the Cowri Demo application using shell scripts:
+  1. Clone the Cowri repository with `git clone http://github.com/cowri/cowri.git`
+  2. `cd` into the `utilities` folder
+  3. Initialize the services with `sh ./init.sh`
+  3. Start the servies with `sh ./start.sh`. This will open the web app in your default browser automatically
+  4. Stop the services with `sh ./stop.sh`
+  
+## Starting each service individually (most difficult)
 
-## Running Cowri Demo App - Locally
+Each individual service can be started manually using NPM. This requires that the Cowri repository has been cloned with `git clone http://github.com/cowri/cowri.git`. Information about each of the utilities can be found in the [Developer Toolkit Overview](../cowri-developer-guide/developerguide). You can also find detailed developer information about the utilities in the [Utilities README](https://github.com/cowri/cowri/blob/master/utilities/README.md)
 
-### Installing Cowri Utilities and Cowri Ganache
-
-Cowri provides a set of tools for you to run cowri applications locally. These include
-
-* Cowri ganache instance
-* Cowri faucet
-* Cowri Liqudity provider
-
-See the [developer guide](developerguide.md) for more detail.
-
-To run the application locally follow the below steps
-
-**1. Install the Cowri Utilities**
-
-```text
-curl -LO https://download.cowri.io/cowri-local.zip | tar tar -xf - -C cowri-local
-cd cowri-local
-```
-
-**2. Run the Cowri Utilities**
-
-```text
-./cowri-local.sh
-```
-
-**3. Connect Metamask to your local ganache instance**
-
-* Open Metamask
-* Select the dropdown next to the Network
-* Select Custom rpc
-* Create a custom RPC connection for Ganache-CLI
-  * NEW RPC URL - [http://127.0.0.1:8545](http://127.0.0.1:8545)
-  * Nickname - Cowri Ganache CLI
-* For further information on MetaMask setup see [here](https://metamask.github.io/metamask-docs/Main_Concepts/Getting_Started)
-
-**4. Import the Private keys for the test users to your metamask wallet**
-
-* Private keys for sample users can be found in [MasterData](masterdata.md)
-* It is recommended to import Alice, Bob, Charlies and Denises private Keys for testing purposes
-* You may also use your own users - you will need to 
-  * transfer them some ether from one of the above test users
-  * Create a cowri shell using the application
-
-**5. Run the Cowri Demo Application - locally**
-
-* From a seperate termianl window, run cowri demo application as above - only with metamask now connected to the newly created Cowri Ganache CLI network. 
-
+**Faucet**
+  1. `cd` into the `utilities/faucet` folder
+  2. Install all dependencies with `npm install`
+  3. Start the faucet service with `npm start -- -k <private key of minter> -P <public key of minter>`
+    - The Cowri ganache private key is `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E` and the ganache public key is `0x40e3ba962dFa3e41d1B54A97199831c2C99f6f37`. Please note that these keys will **ONLY** work with ganache.
+    - More options can be see in with `npm start -- -h`
+ 
+**Ganache**
+  1. `cd` into the `sdk/dapp-sdk` folder
+  2. Install all dependencies with `npm install`
+  3. Install the global dependencies with `npm install -g download-cli extract-zip`
+  4. Start the ganache instance as the Cowri Denise user with `npm run ganache:denise`
+  
+**Liquidity Provider**
+  1. `cd` into the `utilities/liquidity` folder
+  2. Install all dependencies with `npm install`
+  3. Start the liquidity service with `npm start -- -k <liquidity private key> -P <liquidity public key>`
+    - The private key for the Ganache liquidity provider is `ACB02AF912E15578F3A49D0ABDAF8DE136F38045C6F116FA8D691A610FF005A1` and the public key is `0xE24d0B953961C6109d2bD5786923347B6897eAfB`
+    - More options can be see in with `npm start -- -h`
+    
+**Cowri Shell Demo Web App**
+  1. `cd` into the `utilities/cowri-shell` folder
+  2. Install all dependencies with `npm install`
+  3. Start the application with `npm start`
+    - The app will open automatically in the default browser
+ 
