@@ -47,8 +47,8 @@ Each individual service can be started manually using NPM. This requires that th
   1. `cd` into the `utilities/faucet` folder
   2. Install all dependencies with `npm install`
   3. Start the faucet service with `npm start -- -k <private key of minter> -P <public key of minter>`
-    - The Cowri ganache private key is `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E` and the ganache public key is `0x40e3ba962dFa3e41d1B54A97199831c2C99f6f37`. Please note that these keys will **ONLY** work with ganache.
-    - More options can be see in with `npm start -- -h`
+     - The Cowri ganache private key is `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E` and the ganache public key is `0x40e3ba962dFa3e41d1B54A97199831c2C99f6f37`. Please note that these keys will **ONLY** work with ganache.
+     - More options can be see in with `npm start -- -h`
  
 **Ganache**
   1. `cd` into the `sdk/dapp-sdk` folder
@@ -60,12 +60,12 @@ Each individual service can be started manually using NPM. This requires that th
   1. `cd` into the `utilities/liquidity` folder
   2. Install all dependencies with `npm install`
   3. Start the liquidity service with `npm start -- -k <liquidity private key> -P <liquidity public key>`
-    - The private key for the Ganache liquidity provider is `ACB02AF912E15578F3A49D0ABDAF8DE136F38045C6F116FA8D691A610FF005A1` and the public key is `0xE24d0B953961C6109d2bD5786923347B6897eAfB`
-    - More options can be see in with `npm start -- -h`
+     - The private key for the Ganache liquidity provider is `ACB02AF912E15578F3A49D0ABDAF8DE136F38045C6F116FA8D691A610FF005A1` and the public key is `0xE24d0B953961C6109d2bD5786923347B6897eAfB`
+     - More options can be see in with `npm start -- -h`
     
 **Cowri Shell Demo Web App**
   1. `cd` into the `utilities/cowri-shell` folder
   2. Install all dependencies with `npm install`
   3. Start the application with `npm start`
-    - The app will open automatically in the default browser
+     - The app will open automatically in the default browser
  
