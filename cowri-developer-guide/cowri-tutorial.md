@@ -4,6 +4,10 @@
 
 [**Solutions can be found here**](https://github.com/trufflesuite/pet-shop-tutorial)
 
+![This is the coolest crab ever](../.gitbook/assets/yareli-urzua.jpg)
+
+
+
 \*\*[Tutorial Markdown Documentation can be found here](https://github.com/trufflesuite/trufflesuite.com/blob/master/src/tutorials/pet-shop.md)
 
 ![Ethereum Pet Shop](../.gitbook/assets/petshop.png)
