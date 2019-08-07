@@ -1,6 +1,6 @@
 # Architecture
 
-The current version \(v0.2\) of the Cowri Shell Protocol built a stablecoin liquidity pool using the [0x Protocol](https://0x.org/). Going forward, future versions \(v1.0+\) will use a liquidity pool more akin in design to [Uniswap](https://uniswap.io/), although with significant modifications. the new design will enable atomically swapping multiple stablecoins without any off-chain coordination, which is a limitation of the current design. Both the current version \(v0.2\) and the new version \(v1.0\) are included in our architecture documentation.
+The current version \(v0.2\) of the Cowri Shell Protocol built a [stablecoin liquidity pool](protocol-description.md#protocol-implementation) using the [0x Protocol](https://0x.org/). Going forward, future versions \(v1.0+\) will use a liquidity pool more akin in design to [Uniswap](https://uniswap.io/), although with significant modifications. The new design will enable atomically swapping multiple stablecoins without any off-chain coordination, which is a limitation of the current design. Both the current version \(v0.2\) and the new version \(v1.0\) are included in our architecture documentation.
 
 ## Version 0.2.0
 
