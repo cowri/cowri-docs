@@ -8,15 +8,15 @@ If you are a developer interested in integrating Cowri into a project, see our [
 
 To use the Cowri Shell demo app, you first need to install [Metamask](https://metamask.io/), which is available as a plug-in for Chrome, Firefox and Brave browsers. Once you have installed the Metamask plug-in, be sure to set your network to “Kovan”.
 
-![Metamask Kovan screen shot](../.gitbook/assets/screenshot-metamask-kovan.png)
+![See drop-down menu at the top of the plug-in](../.gitbook/assets/screenshot-metamask-kovan.png)
 
 If this is your first time using Metamask on Kovan, you will need to get some test Ether. You can find a Kovan Ether faucet [here](https://gitter.im/kovan-testnet/faucet) or [here](https://faucet.kovan.network/).
 
 ## Getting started
 
-To get started, you first need to create your Cowri shell. A shell is the list of stablecoins you are willing to accept in your crypto wallet. The app will recommend a default list of stablecoins to help you get started. A full list of stablecoins supported on test net can be found **here**. You can add stablecoins to your shell by clicking the “Add Token” button and pasting the address of the token you would like to add.
+To get started, you first need to create your Cowri shell. A shell is the list of stablecoins you are willing to accept in your crypto wallet. The app will recommend a default list of stablecoins to help you get started. A full list of stablecoins supported on test net can be found [here](../cowri-developer-guide/masterdata.md). You can add stablecoins to your shell by clicking the “Add Token” button and pasting the address of the token you would like to add.
 
-![Make Cowri Shell screen shot](../.gitbook/assets/screenshot-create-new-cowri-shell.png)
+![Check the boxes on the right to remove a stablecoin from your shell](../.gitbook/assets/screenshot-create-new-cowri-shell.png)
 
 When you are satisfied with you shell, click “Make Cowri Shell”. Your shell will be registered and the Cowri Faucet will automatically send you some test tokens.
 
@@ -24,17 +24,17 @@ When you are satisfied with you shell, click “Make Cowri Shell”. Your shell 
 
 Cowri is designed so that you do not need to actively manage the stablecoins in your shell. If you would like to view the individual balances of your stablecoins, click, “View Shell”. If you would like to make additional changes to your shell, you can click “Edit Shell”. You can add and delete tokens from there, but don’t forget to click “Save” if you want your updates to be permanent.
 
-![Cowri Main screen shot](../.gitbook/assets/screenshot-main-view.png)
+![Main screen for the Cowri Shell app](../.gitbook/assets/screenshot-main-view.png)
 
 ## Sending cowri
 
 Sending cowri is as easy as sending a single stablecoin. All you need to do is pick a recipient address and the amount you want to send. As long as that recipient address has also registered a shell, the protocol will take care of the rest.
 
-![Send Cowri modal screen shot](../.gitbook/assets/screenshot-send-cowri-modal-filled.png)
+![Copy/paste recipient address in the top field](../.gitbook/assets/screenshot-send-cowri-modal-filled.png)
 
 For the purposes of the demo tutorial, you may want to switch to a new Metamask account and register a second shell. You can switch accounts by clicking the icon in the top right corner of your plug-in drop down menu. Once you have switched accounts, the application should automatically restart and prompt you to create a new shell for that account.
 
-![Metamask drop down screen shot](../.gitbook/assets/screenshot-metamask-change-accounts.png)
+![Click the circular icon at the top right to view Metamask accounts](../.gitbook/assets/screenshot-metamask-change-accounts.png)
 
 ## Experimenting with different shells
 

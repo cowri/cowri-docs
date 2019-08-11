@@ -42,7 +42,7 @@ Sending cowri is easy. All you need to know is the Ethereum address of the inten
 
 ### **How much does it cost to send cowri?**
 
-In most cases, the transaction costs will be less than $0.03, the typical price of sending an ERC-20 token on Ethereum. Like any process that requires writing data to a blockchain, sending cowri requires a user to [pay gas fees.](https://education.district0x.io/general-topics/understanding-ethereum/what-is-gas/) The exact gas fees to send cowri depend on a couple of factors. First, it depends on whether the user must first swap some of their current stablecoins for stablecoins accepted by the recipient. Doing so will add gas fees. Second, the cost of sending cowri will depend on how many individual stablecoins a user sends in order to make the full transaction amount. For every different stablecoin sent, the cost increases. Our algorithm has been designed to reduce gas fees by making as few swaps and sending as few stablecoins as possible.
+In most cases, the transaction costs will be less than $0.03, the typical price of sending an ERC-20 token on Ethereum. Like any process that requires writing data to a blockchain, sending cowri requires a user to [pay gas fees.](https://education.district0x.io/general-topics/understanding-ethereum/what-is-gas/) The exact gas fees to send cowri depend on a couple of factors. First, it depends on whether the user must first swap some of their current stablecoins for stablecoins accepted by the recipient. Doing so will add gas fees. Second, the cost of sending cowri will depend on how many individual stablecoins a user sends in order to make the full transaction amount. For every different stablecoin sent, the cost increases. Our algorithm has been designed to reduce gas fees by making as few swaps and sends as possible.
 
 ### **Cowri vs. cowri**
 
@@ -50,7 +50,7 @@ The distinction is similar to Bitcoin vs. bitcoin, where Bitcoin is the protocol
 
 ### Cowry vs. Cowri
 
-Cowry shells were the earliest known form of money in human history. Archeological evidence can be found across the ancient world from Africa, to Mesopotamia, India and even China. Indeed, the modern Chinese character, 貝 \("bei"\), was [originally a pictogram of a cowry shell.](https://en.wiktionary.org/w/index.php?title=%E8%B2%9D&oldid=53661334) To this day, it has two meanings: "money" and "shell." We chose our name, Cowri, after the cowry shell because it reminds us that even though the form of money continually changes, the function of money is constant.
+Cowry shells were the earliest known form of money in human history. [Archeological evidence](http://chinesecoins.lyq.dk/Bei/BeiNetpakke/index.htm) can be found across the ancient world from Africa, to Mesopotamia, India and even China. Indeed, the modern Chinese character, 貝 \("bei"\), was [originally a pictogram of a cowry shell.](https://en.wiktionary.org/w/index.php?title=%E8%B2%9D&oldid=53661334) To this day, it has two meanings: "money" and "shell." We chose our name, Cowri, after the cowry shell because it reminds us that even though the form of money continually changes, the function of money is constant.
 
 ### **Does Cowri have a native token?**
 
@@ -58,7 +58,7 @@ No. Cowri does not have a native nor does it take custody of users' assets. The 
 
 ### **What is a stablecoin?**
 
-A stablecoin is a cryptocurrency whose value is pegged to a stable reference asset, typically USD. There are five main stablecoins in circulation, at the moment: Tether, USD Coin, TrueUSD, Paxos and Dai. USD Coin, TrueUSD and Paxos are backed by fiat deposits held in custodial bank accounts. Dai is backed by ether locked up in a smart contract. Cowri does not support Tether because the current version of the protocol only works for ERC-20 tokens. Beyond these five stablecoins, there are hundreds of additional stablecoin projects.
+A stablecoin is a cryptocurrency whose value is pegged to a stable reference asset, typically USD. There are five main stablecoins in circulation, at the moment: Tether, USD Coin, TrueUSD, Paxos and Dai. USD Coin, TrueUSD and Paxos are backed by fiat deposits held in custodial bank accounts. Dai is backed by ether locked up in a smart contract. Beyond these five stablecoins, there are hundreds of additional stablecoin projects.
 
 ### **Why won't central banks issue their own stablecoin?**
 
@@ -68,7 +68,7 @@ If a central bank issued their own stablecoin, they would expose themselves dire
 
 ### **What happens to Cowri if a stablecoin permanently loses its peg?**
 
-Stablecoins are not without risk and it is possible a token could completely lose its peg and be worth $0. That is why a user must think very carefully about which stablecoins they want in their shell. Do not accept a stablecoin unless you are confident it will retain value over time. However, if a stablecoin in your shell does permanently lose its peg, your losses will be capped at the amount of that stablecoin held in your wallet.
+Stablecoins are not without risk and it is possible a token could completely lose its peg and fall to $0. That is why a user must think very carefully about which stablecoins they want in their shell. Do not accept a stablecoin unless you are confident it will retain value over time. However, if a stablecoin in your shell does permanently lose its peg, your losses will be capped at the amount of that stablecoin held in your wallet.
 
 In terms of the overall protocol, the main risk is to the stablecoin liquidity pool. In the event of a broken peg, third party traders may try to swap the broken stablecoin for the other coins available in the pool. This would drain the liquidity pool of its capital. To prevent this, there will be safety measures in place that can stop trading for certain stablecoins, or even temporarily halt trading altogether. We will provide more specific information regarding these precautions as we get closer to a main net release.
 

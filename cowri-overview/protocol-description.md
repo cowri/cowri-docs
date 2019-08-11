@@ -2,7 +2,7 @@
 
 ## Stablecoin shells
 
-Although stablecoins are highly fragmented, they are also highly fungible. This is the fundamental insight of the Cowri Shell Protocol. Users ultimately will not care to differentiate between stablecoins because each stablecoin is pegged to the same underlying asset, typically the USD. The only prerequisite is that there is adequate liquidity and adequate projection from a permanently broken peg \(e.g. price = $0\).
+Although stablecoins are highly fragmented, they are also highly fungible. This is the fundamental insight of the Cowri Shell Protocol. Users ultimately will not care to differentiate between stablecoins because each stablecoin is pegged to the same underlying asset, typically the USD. The only prerequisite is that there is adequate liquidity and adequate protection from a permanently broken peg \(e.g. price = $0\).
 
 However, users may not all agree on which stablecoins to use. Some may prefer the stability of fiat-backed tokens, some may prefer the decentralization of crypto-backed tokens. This leads us to the concept of stablecoin shells. A shell is a list of stablecoins a user is willing to accept as fungible to each other. 
 
