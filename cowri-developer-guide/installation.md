@@ -29,15 +29,21 @@ The easiest way to bring all Cowri services up is by using [Docker Compose](http
 
 ### Running using Docker Compose
 
-To run the Cowri Demo application using Docker Compose: 1. Download the Cowri [docker-compose.yaml](http://download.cowri.io/docker-compose.yaml)
+To run the Cowri Demo application using Docker Compose:
 
-* `wget http://download.cowri.io/docker-compose.yaml)`
-  1. From the same directory as the `docker-compose.yaml` file, run `docker-compose up`
-  2. Once the services are done loading, you can use the Cowri demo application by navigating to `http://localhost:6706` in your browser
+1. Download the Cowri [docker-compose.yaml](http://download.cowri.io/docker-compose.yaml)
+2. From the same directory as the `docker-compose.yaml` file, run `docker-compose up`
+3. Once the services are done loading, you can use the Cowri demo application by navigating to `http://localhost:6706` in your browser
 
 ### Running using Shell Scripts \(UNIX systems only\)
 
-To run the Cowri Demo application using shell scripts: 1. Clone the Cowri repository with `git clone http://github.com/cowri/cowri.git` 2. `cd` into the `utilities` folder 3. Initialize the services with `sh ./init.sh` 3. Start the servies with `sh ./start.sh`. This will open the web app in your default browser automatically 4. Stop the services with `sh ./stop.sh`
+To run the Cowri Demo application using shell scripts:
+
+1. Clone the Cowri repository with `git clone http://github.com/cowri/cowri.git`
+2. `cd` into the `utilities` folder
+3. Initialize the services with `sh ./init.sh`
+4. Start the servies with `sh ./start.sh`. This will open the web app in your default browser automatically
+5. Stop the services with `sh ./stop.sh`
 
 ## Starting each service individually \(most difficult\)
 

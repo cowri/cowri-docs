@@ -1,6 +1,6 @@
 # Cowri Crab Corner Tutorial
 
-[**Follow this Tutorial**](https://www.trufflesuite.com/tutorials/pet-shop)
+[**Follow this Tutorial**](https://www.trufflesuite.com/tutorials/pet-shop) **great**
 
 [**Solutions can be found here**](https://github.com/trufflesuite/pet-shop-tutorial)
 
