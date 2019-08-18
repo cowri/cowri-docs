@@ -6,8 +6,6 @@
 
 \*\*[Tutorial Markdown Documentation can be found here](https://github.com/trufflesuite/trufflesuite.com/blob/master/src/tutorials/pet-shop.md)
 
-{% file src="../.gitbook/assets/cowri\_square.png" %}
-
 This tutorial will take you through the process of building your first dapp---a payment protocol integrated into Cowri Crab Corner!
 
 This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.
