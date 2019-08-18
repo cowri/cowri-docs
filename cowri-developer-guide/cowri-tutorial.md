@@ -71,7 +71,33 @@ The default Truffle directory structure contains the following:
 * `truffle-config.js`: Truffle configuration file \(windows users\)
 * `truffle.js`: Truffle configuration file 
 
-The `cowri-crab-coner` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
+The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
+
+### Import MetaMask account
+
+1. Click `Import account using seed phrase`
+2. Paste the following wallet seed nemonic `delay camera general radar random pink claim grit club oak member inject` 
+3. Create and save your password for this account
+
+### Add Cowri Faucet Ganache account to MetaMask
+
+1. Click your MetaMask profile icon and `Import Account`
+2. Paste the following private key and click `Import` `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E`
+3. Click on this new Account and click the pencil icon to change the name to `Cowri Faucet Ganache`
+
+### Deploy contracts and add minted token to MetaMask \(TODO: add pics\)
+
+Now that truffle is unboxed we need to compile and migrate our contracts
+
+1. Enter dev console by typing `truffle develop` in your terminal
+2. Type `compile` to create a build folder for our contracts 
+3. Type `migrate --network development` to migrate and deploy our contracts to development
+4. Type `networks` to view all of networks
+5. Copy the `CowriMintable` address from the `development (id: 50)` Network
+6. Click `Add Token` in MetaMask
+7. Paste in the `CowriMintable` address followed by clicking `Next`
+
+Congratulations! You've deployed your own stablecoin and added it to MetaMask. You're now ready to use this token and integrate with Cowri.
 
 ### Instantiating web3
 
@@ -153,40 +179,38 @@ Now we're ready to use our dapp!
 
 ### Installing and configuring MetaMask
 
-Please read prerequisites in \[Setup\]\(\#prerequisites\)
+Please read prerequisites in [Setup](installation.md#prerequisites)
 
 ### Using the dapp
 
 1. Start the local web server:
 
-   ```text
-   npm run dev
+   ```bash
+   cd client
+   npm install
+   npm start
    ```
 
    The dev server will launch and automatically open a new browser tab containing your dapp.
 
-   !\[Pete's Pet Shop\]\(../img/pet-shop/dapp.png "Pete's Pet Shop"\)
+   ![MetaMask approval request](../.gitbook/assets/cowri_crab_corner_main%20%281%29.png)
 
-2. A MetaMask pop-up should appear requesting your approval to allow Pete's Pet Shop to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click **Connect**.
+2. A MetaMask pop-up should appear requesting your approval to allow Cowri Crab Corner to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click **Connect**.
 
-   ![MetaMask approval request](../.gitbook/assets/metamask-transactionconfirm.png)
+   ![MetaMask approval request](../.gitbook/assets/cowri_crab_corner_confirm.png)
 
-3. To use the dapp, click the **Adopt** button on the pet of your choice.
-4. You'll be automatically prompted to approve the transaction by MetaMask. Click **Submit** to approve the transaction.
+3. To use the dapp, click the **Send Cowri** button on the hermit crab of your choice.![Adoption transaction review](../.gitbook/assets/cowri_crab_corner_send_cowri.png)
+4. Type in an amount and click **Send**.
 
-   ![Adoption transaction review](../.gitbook/assets/metamask-transactionconfirm%20%281%29.png)
+   ![Adoption transaction review](../.gitbook/assets/cowri_crab_corner_send_modal.png)
 
-5. You'll see the button next to the adopted pet change to say "Success" and become disabled, just as we specified, because the pet has now been adopted.
+5. You'll be automatically prompted to approve the transaction by MetaMask. Click **Confirm** to approve the transaction.
 
-   ![Adoption success](../.gitbook/assets/dapp-success.png)
+   ![Adoption transaction review](../.gitbook/assets/cowri_crab_corner_metamask_confirm.png)
 
-    **Note**: If the button doesn't automatically change to say "Success", refreshing the app in the browser should trigger it.
+6. In MetaMask, you'll see the transaction listed:
 
-   And in MetaMask, you'll see the transaction listed:
+   ![MetaMask transaction](../.gitbook/assets/cowri_crab_corner_tx_list.png)
 
-   ![MetaMask transaction](../.gitbook/assets/metamask-transactionsuccess.png)
-
-   You'll also see the same transaction listed in Ganache under the "Transactions" section.
-
-Congratulations! You have taken a huge step to becoming a full-fledged dapp developer. For developing locally, you have all the tools you need to start making more advanced dapps. If you'd like to make your dapp live for others to use, stay tuned for our future tutorial on deploying to the Ropsten testnet.
+Congratulations! You have successfully integrated Cowri into the Cowri Crab Corner! For developing locally, you have all the tools you need to start making more advanced dapps.
 
