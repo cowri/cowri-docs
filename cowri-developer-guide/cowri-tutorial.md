@@ -1,18 +1,14 @@
 # Cowri Crab Corner Tutorial
 
-[**Follow this Tutorial**](https://www.trufflesuite.com/tutorials/pet-shop) **great**
+[**Follow this Tutorial**](https://www.trufflesuite.com/tutorials/pet-shop)
 
 [**Solutions can be found here**](https://github.com/trufflesuite/pet-shop-tutorial)
 
-![This is the coolest crab ever](../.gitbook/assets/yareli-urzua.jpg)
-
-
-
 \*\*[Tutorial Markdown Documentation can be found here](https://github.com/trufflesuite/trufflesuite.com/blob/master/src/tutorials/pet-shop.md)
 
-![Ethereum Pet Shop](../.gitbook/assets/petshop.png)
+{% file src="../.gitbook/assets/cowri\_square.png" %}
 
-This tutorial will take you through the process of building your first dapp---an adoption tracking system for a pet shop!
+This tutorial will take you through the process of building your first dapp---a payment protocol integrated into Cowri Crab Corner!
 
 This tutorial is meant for those with a basic knowledge of Ethereum and smart contracts, who have some knowledge of HTML and JavaScript, but who are new to dapps.
 
@@ -27,9 +23,9 @@ In this tutorial we will be covering:
 
 ## Background
 
-Pete Scandlon of Pete's Pet Shop is interested in using Ethereum as an efficient way to handle their pet adoptions. The store has space for 16 pets at a given time, and they already have a database of pets. As an initial proof of concept, **Pete wants to see a dapp which associates an Ethereum address with a pet to be adopted.**
+Triton of Cowri Crab Corner is interested in using Cowri as an efficient way to handle their hermit crab donations. As an initial proof of concept, **Triton wants to see a dapp, which associates a cowri shell with a hermit crab to receive donations.**
 
-The website structure and styling will be supplied. **Our job is to write the smart contract and front-end logic for its usage.**
+The website structure and styling will be supplied. **Our job is to integrate with the cowri protocol and front-end logic for its usage.**
 
 ## Setting up the development environment
 
@@ -55,15 +51,15 @@ We also will be using [Ganache](https://github.com/cowri/cowri-docs/tree/04d9b6d
 1. Truffle initializes in the current directory, so first create a directory in your development folder of choice and then moving inside it.
 
    ```text
-   mkdir pet-shop-tutorial
+   mkdir cowri-crab-corner-tutorial
 
-   cd pet-shop-tutorial
+   cd cowri-crab-corner-tutorial
    ```
 
-2. We've created a special [Truffle Box](https://github.com/cowri/cowri-docs/tree/04d9b6dec5ee45ed731242763b10787dc6964125/boxes/README.md) just for this tutorial called `pet-shop`, which includes the basic project structure as well as code for the user interface. Use the `truffle unbox` command to unpack this Truffle Box.
+2. We've created a special [Truffle Box](https://github.com/cowri/cowri-docs/tree/04d9b6dec5ee45ed731242763b10787dc6964125/boxes/README.md) just for this tutorial called `cowri-crab-corner`, which includes the basic project structure as well as code for the user interface. Use the `truffle unbox` command to unpack this Truffle Box.
 
    ```text
-   truffle unbox pet-shop
+   truffle unbox cowri-crab-corner
    ```
 
  **Note**: Truffle can be initialized a few different ways. Another useful initialization command is \`truffle init\`, which creates an empty Truffle project with no example contracts included. For more information, please see the documentation on \[Creating a project\]\(/docs/getting\_started/project\).
@@ -74,14 +70,14 @@ The default Truffle directory structure contains the following:
 
 * `contracts/`: Contains the [Solidity](https://solidity.readthedocs.io/) source files for our smart contracts. There is an important contract in here called `Migrations.sol`, which we'll talk about later.
 * `migrations/`: Truffle uses a migration system to handle smart contract deployments. A migration is an additional special smart contract that keeps track of changes.
-* `test/`: Contains both JavaScript and Solidity tests for our smart contracts
-* `truffle-config.js`: Truffle configuration file
+* `truffle-config.js`: Truffle configuration file \(windows users\)
+* `truffle.js`: Truffle configuration file 
 
-The `pet-shop` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
+The `cowri-crab-coner` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
 
 ### Instantiating web3
 
-1. Open `/src/js/app.js` in a text editor.
+1. Open `client/src/App.js` in a text editor.
 2. Examine the file. Note that there is a global `App` object to manage our application, load in the pet data in `init()` and then call the function `initWeb3()`. The [web3 JavaScript library](https://github.com/ethereum/web3.js/) interacts with the Ethereum blockchain. It can retrieve user accounts, send transactions, interact with smart contracts, and more.
 3. Remove the multi-line comment from within `initWeb3` and replace it with the following:
 
@@ -114,96 +110,45 @@ Things to notice:
 * If the `ethereum` object does not exist, we then check for an injected `web3` instance. If it exists, this indicates that we are using an older dapp browser \(like [Mist](https://github.com/ethereum/mist) or an older version of MetaMask\). If so, we get its provider and use it to create our web3 object.
 * If no injected web3 instance is present, we create our web3 object based on our local provider. \(This fallback is fine for development environments, but insecure and not suitable for production.\)
 
-### Instantiating the contract
+### Integrating Send Cowri \(React\)
 
-Now that we can interact with Ethereum via web3, we need to instantiate our smart contract so web3 knows where to find it and how it works. Truffle has a library to help with this called `truffle-contract`. It keeps information about the contract in sync with migrations, so you don't need to change the contract's deployed address manually.
+Now that we can interact with Ethereum via web3, we need to use our Send Cowri component. We can either pass in an instance of web3 or use the one built into Send Cowri.
 
-1. Still in `/src/js/app.js`, remove the multi-line comment from within `initContract` and replace it with the following:
+Send Cowri react component takes the following _optional_ properties:
 
-   ```javascript
-   $.getJSON('Adoption.json', function(data) {
-     // Get the necessary contract artifact file and instantiate it with truffle-contract
-     var AdoptionArtifact = data;
-     App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| address | `string` | the receiver's public address |
+| amount | `number` | the amount of cowri to send |
+| web3 | `Web3` | instance of web3 |
 
-     // Set the provider for our contract
-     App.contracts.Adoption.setProvider(App.web3Provider);
+1. Install and save `@cowri/send-react`:
 
-     // Use our contract to retrieve and mark the adopted pets
-     return App.markAdopted();
-   });
+   ```bash
+   npm install @cowri/send-react --save
    ```
 
-Things to notice:
+2. In _src/components/CardBody/CardBody.js_ add the following import at the top of the file:
 
-* We first retrieve the artifact file for our smart contract. **Artifacts are information about our contract such as its deployed address and Application Binary Interface \(ABI\)**. **The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.**
-* Once we have the artifacts in our callback, we pass them to `TruffleContract()`. This creates an instance of the contract we can interact with.
-* With our contract instantiated, we set its web3 provider using the `App.web3Provider` value we stored earlier when setting up web3.
-* We then call the app's `markAdopted()` function in case any pets are already adopted from a previous visit. We've encapsulated this in a separate function since we'll need to update the UI any time we make a change to the smart contract's data.
+   ```javascript
+   import SendCowri from '@cowri/send-react';
+   ```
+
+3. Remove the following line:
+
+   ```javascript
+   <Button text={'Donate} />
+   ```
+
+4. Add SendCowri component and pass in `address` from props:
+
+   ```javascript
+   <SendCowri address={address} />
+   ```
 
 ### Getting The Adopted Pets and Updating The UI
 
-1. Still in `/src/js/app.js`, remove the multi-line comment from `markAdopted` and replace it with the following:
-
-   ```javascript
-   var adoptionInstance;
-
-   App.contracts.Adoption.deployed().then(function(instance) {
-     adoptionInstance = instance;
-
-     return adoptionInstance.getAdopters.call();
-   }).then(function(adopters) {
-     for (i = 0; i < adopters.length; i++) {
-       if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-         $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
-       }
-     }
-   }).catch(function(err) {
-     console.log(err.message);
-   });
-   ```
-
-Things to notice:
-
-* We access the deployed `Adoption` contract, then call `getAdopters()` on that instance.
-* We first declare the variable `adoptionInstance` outside of the smart contract calls so we can access the instance after initially retrieving it.
-* Using **call\(\)** allows us to read data from the blockchain without having to send a full transaction, meaning we won't have to spend any ether.
-* After calling `getAdopters()`, we then loop through all of them, checking to see if an address is stored for each pet. Since the array contains address types, Ethereum initializes the array with 16 empty addresses. This is why we check for an empty address string rather than null or other falsey value.
-* Once a `petId` with a corresponding address is found, we disable its adopt button and change the button text to "Success", so the user gets some feedback.
-* Any errors are logged to the console.
-
 ### Handling the adopt\(\) Function
-
-1. Still in `/src/js/app.js`, remove the multi-line comment from `handleAdopt` and replace it with the following:
-
-   ```javascript
-   var adoptionInstance;
-
-   web3.eth.getAccounts(function(error, accounts) {
-     if (error) {
-       console.log(error);
-     }
-
-     var account = accounts[0];
-
-     App.contracts.Adoption.deployed().then(function(instance) {
-       adoptionInstance = instance;
-
-       // Execute adopt as a transaction by sending account
-       return adoptionInstance.adopt(petId, {from: account});
-     }).then(function(result) {
-       return App.markAdopted();
-     }).catch(function(err) {
-       console.log(err.message);
-     });
-   });
-   ```
-
-Things to notice:
-
-* We use web3 to get the user's accounts. In the callback after an error check, we then select the first account.
-* From there, we get the deployed contract as we did above and store the instance in `adoptionInstance`. This time though, we're going to send a **transaction** instead of a call. Transactions require a "from" address and have an associated cost. This cost, paid in ether, is called **gas**. The gas cost is the fee for performing computation and/or storing data in a smart contract. We send the transaction by executing the `adopt()` function with both the pet's ID and an object containing the account address, which we stored earlier in `account`.
-* The result of sending a transaction is the transaction object. If there are no errors, we proceed to call our `markAdopted()` function to sync the UI with our newly stored data.
 
 ## Interacting with the dapp in a browser
 
@@ -255,33 +200,6 @@ The easiest way to interact with our dapp in a browser is through [MetaMask](htt
    ![MetaMask account configured](../.gitbook/assets/metamask-account1.png)
 
    Configuration is now complete.
-
-### Installing and configuring lite-server
-
-We can now start a local web server and use the dapp. We're using the `lite-server` library to serve our static files. This shipped with the `pet-shop` Truffle Box, but let's take a look at how it works.
-
-1. Open `bs-config.json` in a text editor \(in the project's root directory\) and examine the contents:
-
-   ```javascript
-   {
-     "server": {
-       "baseDir": ["./src", "./build/contracts"]
-     }
-   }
-   ```
-
-   This tells `lite-server` which files to include in our base directory. We add the `./src` directory for our website files and `./build/contracts` directory for the contract artifacts.
-
-   We've also added a `dev` command to the `scripts` object in the `package.json` file in the project's root directory. The `scripts` object allows us to alias console commands to a single npm command. In this case we're just doing a single command, but it's possible to have more complex configurations. Here's what yours should look like:
-
-   ```javascript
-   "scripts": {
-     "dev": "lite-server",
-     "test": "echo \"Error: no test specified\" && exit 1"
-   },
-   ```
-
-   This tells npm to run our local install of `lite-server` when we execute `npm run dev` from the console.
 
 ### Using the dapp
 
