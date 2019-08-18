@@ -2,7 +2,7 @@
 
 The setup and installation of Cowri and its back end services can be done in a number of ways. Developers have the choice of cloning the repository and starting each service individually \(not recommended\), bringing the services up using docker-compose, or starting all the services using a shell script from the Github repository \(UNIX systems only\). This document outlines each of the installation options.
 
-## Prerequisties
+## Prerequisites
 
 #### **Metamask**
 
