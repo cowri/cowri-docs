@@ -44,7 +44,11 @@ We also will be using [Ganache](https://github.com/cowri/cowri-docs/tree/04d9b6d
 
  **Note**: If you are developing in an environment without a graphical interface, you can also use Truffle Develop, Truffle's built-in personal blockchain, instead of Ganache. You will need to change some settings---such as the port the blockchain runs on---to adapt the tutorial for Truffle Develop.
 
-## Creating a Truffle project using a Truffle Box
+### Installing and configuring MetaMask
+
+Please read prerequisites in [Setup](installation.md#prerequisites)
+
+## Creating a Truffle project using a Truffle Box \(TODO: deploy box to truffle\)
 
 1. Truffle initializes in the current directory, so first create a directory in your development folder of choice and then moving inside it.
 
@@ -76,7 +80,7 @@ The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we wo
 ### Import MetaMask account
 
 1. Click `Import account using seed phrase`
-2. Paste the following wallet seed nemonic `delay camera general radar random pink claim grit club oak member inject` 
+2. Paste the following wallet seed nemonic \(**Warning**: this _will_ remove your current MetaMask account\)`delay camera general radar random pink claim grit club oak member inject` 
 3. Create and save your password for this account
 
 ### Add Cowri Faucet Ganache account to MetaMask
@@ -87,15 +91,16 @@ The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we wo
 
 ### Deploy contracts and add minted token to MetaMask \(TODO: add pics\)
 
-Now that truffle is unboxed we need to compile and migrate our contracts
+Now that truffle is unboxed we need to compile and migrate our contracts:
 
-1. Enter dev console by typing `truffle develop` in your terminal
-2. Type `compile` to create a build folder for our contracts 
-3. Type `migrate --network development` to migrate and deploy our contracts to development
-4. Type `networks` to view all of networks
-5. Copy the `CowriMintable` address from the `development (id: 50)` Network
-6. Click `Add Token` in MetaMask
-7. Paste in the `CowriMintable` address followed by clicking `Next`
+1. Make sure you're at the following directory `cowri/tutorial/crab-corner`
+2. Enter truffle dev console by typing `truffle develop` in your terminal
+3. Type `compile` to create a build folder for our contracts 
+4. Type `migrate --network development` to migrate and deploy our contracts to development
+5. Type `networks` to view all of networks
+6. Copy the `CowriMintable` address from the `development (id: 50)` Network
+7. Click `Add Token` in MetaMask
+8. Paste in the `CowriMintable` address followed by clicking `Next`
 
 Congratulations! You've deployed your own stablecoin and added it to MetaMask. You're now ready to use this token and integrate with Cowri.
 
@@ -176,10 +181,6 @@ The Send Cowri React component takes the following _optional_ properties:
 ## Interacting with the dapp in a browser
 
 Now we're ready to use our dapp!
-
-### Installing and configuring MetaMask
-
-Please read prerequisites in [Setup](installation.md#prerequisites)
 
 ### Using the dapp
 
