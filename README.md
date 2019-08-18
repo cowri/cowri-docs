@@ -12,5 +12,5 @@ Cowri's goal is to create Internet Money by building a stable and liquid medium 
 
 **Developers: i**f you are a developer and want to integrate Cowri into your project, see the [**developer guide.**](cowri-developer-guide/developerguide.md) ****
 
-**Protocol: i**f you would like to learn more about how Cowri works, the problems Cowri solves and our road map, see the [**Project Overview.**](cowri-overview/project-purpose.md) If you want to understand how Cowri fits in with the past and future of money, read our **white paper.**
+**Protocol: i**f you would like to learn more about how Cowri works, the problems Cowri solves and our road map, see the [**Project Overview.**](cowri-overview/project-purpose.md) If you want to understand how Cowri fits in with the past and future of money, read our [**white paper.**](https://www.cowri.io/whitepaper.pdf)\*\*\*\*
 
