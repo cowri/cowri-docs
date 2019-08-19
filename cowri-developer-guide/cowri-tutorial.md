@@ -77,17 +77,17 @@ The default Truffle directory structure contains the following:
 
 The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
 
-### Import MetaMask account
+### Import MetaMask account \(delete\)
 
 1. Click `Import account using seed phrase`
 2. Paste the following wallet seed nemonic \(**Warning**: this _will_ remove your current MetaMask account\)`delay camera general radar random pink claim grit club oak member inject` 
 3. Create and save your password for this account
 
-### Add Cowri Faucet Ganache account to MetaMask
+### Add Cowri Crab Corner DApp account to MetaMask
 
 1. Click your MetaMask profile icon and `Import Account`
 2. Paste the following private key and click `Import` `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E`
-3. Click on this new Account and click the pencil icon to change the name to `Cowri Faucet Ganache`
+3. Click on this new Account and click the pencil icon to change the name to `Cowri Crab Corner DApp`
 
 ### Deploy contracts and add minted token to MetaMask \(TODO: add pics\)
 
