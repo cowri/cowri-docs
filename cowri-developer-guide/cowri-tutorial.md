@@ -31,6 +31,13 @@ With MetaMask connected to Kovan, we now need to create a cowri shell for the cu
    1. Notice how you have the option to add another token
    2. The creation of a Cowri Shell on Kovan will result in the minting of supported tokens
 
+### Running Crab Corner
+
+1. `cd` into the 'crab-corner/client' directory
+2. Run `npm install` to install all dependencies
+3. Run `npm start` to start our simple React web server. 
+4. Notice how the buttons by each crab don't do anything. It's our job to replace these buttons with the Cowri Send React buttons
+
 ### Integrating Send Cowri \(React\)
 
 With our Cowri Shell created on Kovan, we now need to implement our Send Cowri component. The Send Cowri React component takes the following _optional_ properties:
@@ -41,33 +48,29 @@ With our Cowri Shell created on Kovan, we now need to implement our Send Cowri c
 | amount | `number` | the amount of cowri to send |
 | web3 | `Web3` | instance of web3 |
 
-1. `cd` into the 'crab-corner/client' directory
-2. Run `npm install` to install all dependencies
-3. Run `npm start` to start our simple React web server. 
-4. Notice how the buttons by each crab don't do anything. It's our job to replace these buttons with the Cowri Send React buttons
-5. Install and save `@cowri/send-react`:
+1. Install and save `@cowri/send-react`:
 
-   ```bash
-   npm install @cowri/send-react --save
-   ```
+```bash
+npm install @cowri/send-react --save
+```
 
-6. In `src/components/CardBody/CardBody.js` add the following import at the top of the file:
+2. In `src/components/CardBody/CardBody.js` add the following import at the top of the file:
 
-   ```javascript
-   import SendCowri from '@cowri/send-react';
-   ```
+```javascript
+import SendCowri from '@cowri/send-react';
+```
 
-7. Remove the following line:
+3. Remove the following line:
 
-   ```javascript
-   <Button text={'Donate'} />
-   ```
+```javascript
+<Button text={'Donate'} />
+```
 
-8. Add `SendCowri` component and pass in `address` and `web3` from props:
+4. Add `SendCowri` component and pass in `address` and `web3` from props:
 
-   ```javascript
-   <SendCowri address={address} />
-   ```
+```javascript
+<SendCowri address={address} />
+```
 
 ## Interacting with the dapp in a browser
 
