@@ -91,13 +91,13 @@ Now we're ready to use our dapp!
 
    The dev server will launch and automatically open a new browser tab containing your dapp.
 
-   ![MetaMask approval request](../.gitbook/assets/cowri_crab_corner_main%20%281%29.png)
+   ![MetaMask approval request](../.gitbook/assets/cowri_crab_corner_grid.png)
 
 2. A MetaMask pop-up should appear requesting your approval to allow Cowri Crab Corner to connect to your MetaMask wallet. Without explicit approval, you will be unable to interact with the dapp. Click **Connect**.
 
    ![MetaMask approval request](../.gitbook/assets/cowri_crab_corner_confirm.png)
 
-3. To use the dapp, click the **Send Cowri** button on the hermit crab of your choice.![Adoption transaction review](../.gitbook/assets/cowri_crab_corner_send_cowri.png)
+3. To use the dapp, click the **Send Cowri** button on the hermit crab of your choice.![Adoption transaction review](../.gitbook/assets/koopa.png)
 4. Type in an amount and click **Send**.
 
    ![Adoption transaction review](../.gitbook/assets/cowri_crab_corner_send_modal.png)
