@@ -15,7 +15,9 @@ In this tutorial we will be covering:
 
 ## Background
 
-Triton of Cowri Crab Corner is interested in using Cowri as an efficient way to handle their hermit crab donations. As an initial proof of concept, **Triton wants to see a dapp, that associates a cowri shell with a hermit crab to receive donations.**
+Triton runs a non-profit, the Cowri Crab Corner, that helps his fellow hermit crabs keep their beaches clean. Every year, [8 million metric tons of plastic](https://www.earthday.org/2018/04/05/fact-sheet-plastics-in-the-ocean/) go into our oceans. Triton and his friends need all the help they can get! They are collecting donations for beach clean ups all around the world. Because this is a global problem, they need a borderless currency. Help Triton and his hermit crab friends build their dapp so they can accept funds from anywhere in the world.
+
+Triton thinks that Cowri would be an efficient way to handle their hermit crab donations. As an initial proof of concept, **Triton wants to see a dapp that associates a** [**cowri shell**](../cowri-overview/protocol-description.md#stablecoin-shells) **with a hermit crab to receive donations for a beach clean up.**
 
 The website structure and styling will be supplied. **Our job is to integrate with the cowri protocol and front-end logic for its usage.**
 
@@ -70,6 +72,17 @@ The default Truffle directory structure contains the following:
 
 The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we won't worry about those just yet.
 
+### Connect MetaMask to Ganache-CLI and add the Cowri Crab Corner DApp account to MetaMask
+
+1. Open MetaMask in your browser and change the network to `Localhost 8545`
+2. Click your MetaMask profile icon and select `Import Account`
+3. Paste the following private key and click `Import` `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E`
+4. Click on this new Account and click the pencil icon to change the name to `Cowri Crab Corner DApp`
+
+### Deploy contracts and add minted token to MetaMask
+
+Now that truffle is unboxed we need to compile and migrate our contracts:
+
 ### Start Your Local Development Blockchain
 
 1. Confirm that Ganache-CLI is installed with `ganache-cli --version`
@@ -93,39 +106,17 @@ The Cowri Faucet is a service used in development environments to mint \(generat
 1. If you haven't already, clone the Cowri monorepo with `git clone http://github.com/cowri/cowri.git`
 2. `cd` into `cowri/utilities/faucet` and run `npm install`
 3. Start the faucet as the Cowri Ganache user with `npm start -- -k 43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E -P 0x40e3ba962dFa3e41d1B54A97199831c2C99f6f37 -m 1000000`
-
-### Connect MetaMask to Ganache-CLI and add the Cowri Crab Corner DApp account to MetaMask
-
-1. Open MetaMask in your browser and change the network to `Localhost 8545`
-2. Click your MetaMask profile icon and select `Import Account`
-3. Paste the following private key and click `Import` `43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E`
-4. Click on this new Account and click the pencil icon to change the name to `Cowri Crab Corner DApp`
-
-### Deploy contracts and add minted token to MetaMask
-
-Now that truffle is unboxed we need to compile and migrate our contracts:
-
-1. Make sure you're at the following directory `cowri/tutorial/crab-corner`
-2. Run `npm install`. This allows the [OpenZeppelin ERC20 contracts](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20) to be available
-3. Enter the truffle development console by typing `truffle develop` in your terminal
-4. Type `compile` to create a build folder for our contracts 
-5. Type `migrate -network development` to migrate and deploy our contracts to our running Ganache-CLI instance
-6. Type `networks` to view all of networks
-7. Copy the `CowriMintable` address from the `development (id: 50)` Network
-8. Click `Add Token` in MetaMask
-9. Paste in the `CowriMintable` address followed by clicking `Next`
+4. Make sure you're at the following directory `cowri/tutorial/crab-corner`
+5. Run `npm install`. This allows the [OpenZeppelin ERC20 contracts](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20) to be available
+6. Enter the truffle development console by typing `truffle develop` in your terminal
+7. Type `compile` to create a build folder for our contracts 
+8. Type `migrate -network development` to migrate and deploy our contracts to our running Ganache-CLI instance
+9. Type `networks` to view all of networks
+10. Copy the `CowriMintable` address from the `development (id: 50)` Network
+11. Click `Add Token` in MetaMask
+12. Paste in the `CowriMintable` address followed by clicking `Next`
 
 Congratulations! You've deployed your own stablecoin and added it to MetaMask. You're now ready to use this token and integrate with Cowri.
-
-### Create the Cowri Shell for the Cowri Crab Corner DApp User
-
-Now that we have MetaMask connected to Ganache and the contracts deployed, we now need to create a shell for the Cowri Crab Corner DApp user with the newly added ERC20 token. To create a shell:
-
-1. Navigate to https://demo.cowri.io
-2. Select the option to `Add Token`
-3. Paste the address of the ERC20 contract deployed 
-4. Optionally, remove the other suggested tokens by checking the box next to each one
-5. Click `Make Cowri Shell`. If you didn't start the faucet service earlier, you'll see an error message that says `Network Error`. However, refreshing the page will show that the shell has been created. 
 
 ### Instantiating web3
 
@@ -164,6 +155,16 @@ Things to notice:
 * First, we check if we are using modern dapp browsers or the more recent versions of [MetaMask](https://github.com/MetaMask) where an `ethereum` provider is injected into the `window` object. If so, we use it to create our web3 object, but we also need to explicitly request access to the accounts with `ethereum.enable()`.
 * If the `ethereum` object does not exist, we then check for an injected `web3` instance. If it exists, this indicates that we are using an older dapp browser \(like [Mist](https://github.com/ethereum/mist) or an older version of MetaMask\). If so, we get its provider and use it to create our web3 object.
 * If no injected web3 instance is present, we create our web3 object based on our local provider. \(This fallback is fine for development environments, but insecure and not suitable for production.\)
+
+### Create the Cowri Shell for the Cowri Crab Corner DApp User
+
+Now that we have MetaMask connected to Ganache and the contracts deployed, we now need to create a shell for the Cowri Crab Corner DApp user with the newly added ERC20 token. To create a shell:
+
+1. Navigate to https://demo.cowri.io
+2. Select the option to `Add Token`
+3. Paste the address of the ERC20 contract deployed 
+4. Optionally, remove the other suggested tokens by checking the box next to each one
+5. Click `Make Cowri Shell`. If you didn't start the faucet service earlier, you'll see an error message that says `Network Error`. However, refreshing the page will show that the shell has been created. 
 
 ### Integrating Send Cowri \(React\)
 
