@@ -6,7 +6,7 @@ This tutorial is meant for those with a basic knowledge of Ethereum and smart co
 
  **Note**: For Ethereum basics, please read the [Truffle Ethereum Overview](https://www.trufflesuite.com/tutorials/ethereum-overview) tutorial before proceeding.
 
-In this tutorial we assume you have completed your [developer setup](installation/). 
+In this tutorial we assume you have completed your [developer setup](installation.md). 
 
 Here we will be covering:
 

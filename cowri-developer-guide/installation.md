@@ -15,7 +15,7 @@ The setup and installation of Cowri and its back end services can be done in a n
 1. Install the [Metamask](https://metamask.io/) browser extension for your browser
    * If you're new to Metamask, familiarize yourself with this [three and a half minute video](https://youtu.be/ZIGUC9JAAw8)
 2. If you haven't already, create your Metamask wallet
-3. Familiarize yourself with Cowri and its use of Metamask with the [Cowri Tutorial](../../cowri-user-guide/1-user-tutorial.md)
+3. Familiarize yourself with Cowri and its use of Metamask with the [Cowri Tutorial](../cowri-user-guide/1-user-tutorial.md)
 4. For a more complete Cowri experience, import each of the Cowri test users into Metamask from Cowri's [Master Data](https://github.com/cowri/cowri-docs/tree/ee67cd05b68e99ed75c2cf128a218c50422db9f8/cowri-developer-guide/masterdata/README.md) and, optionally, importing each of Cowri's test ERC20 tokens into each user. 
 
 {% hint style="info" %}

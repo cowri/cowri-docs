@@ -16,8 +16,7 @@
 ## Cowri Developer Guide
 
 * [Developer Toolkit Overview](cowri-developer-guide/developerguide.md)
-* [Developer Setup](cowri-developer-guide/installation/README.md)
-  * [Crab Setup](cowri-developer-guide/installation/crab-setup.md)
+* [Developer Setup](cowri-developer-guide/installation.md)
 * [Cowri Crab Corner Tutorial](cowri-developer-guide/cowri-tutorial.md)
 * [Master Data](cowri-developer-guide/masterdata.md)
 * [Troubleshooting](cowri-developer-guide/troubleshooting.md)
