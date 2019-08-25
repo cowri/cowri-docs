@@ -33,10 +33,11 @@ With MetaMask connected to Kovan, we now need to create a cowri shell for the cu
 
 ### Running Crab Corner
 
-1. `cd` into the 'crab-corner/client' directory
-2. Run `npm install` to install all dependencies
-3. Run `npm start` to start our simple React web server. 
-4. Notice how the buttons by each crab don't do anything. It's our job to replace these buttons with the Cowri Send React buttons
+1. Clone the crab-corner-tutoral repository with `git clone http://github.com/cowri/crab-corner-tutorial.git`
+2. `cd` into the 'crab-corner-tutorial/crab-corner' directory
+3. Run `npm install` to install all dependencies
+4. Run `npm start` to start our simple React web server. 
+5. Notice how the buttons by each crab don't do anything. It's our job to replace these buttons with the Cowri Send React buttons
 
 ### Integrating Send Cowri \(React\)
 
