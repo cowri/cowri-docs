@@ -30,7 +30,7 @@ DeFi protocols already hold $500 million in assets on Ethereum. This technology,
 
 ### **How does Cowri work?**
 
-The best way to learn about how Cowri works is to read our **white paper**. Our [protocol overview](../cowri-overview/protocol-description.md) is also a good resource. In short, the Cowri Shell Protocol has three main components: shell ledger, shell manager and liquidity pool. The shell ledger tracks which stablecoins users will accept. The shell manager contains the logic necessary to ensure users always send and receive the correct stablecoins. And the liquidity pool facilitates swaps between stablecoins when necessary.
+The best way to learn about how Cowri works is to read our [white paper.](https://www.cowri.io/whitepaper.pdf) Our [protocol overview](../cowri-overview/protocol-description.md) is also a good resource. In short, the Cowri Shell Protocol has three main components: shell ledger, shell manager and liquidity pool. The shell ledger tracks which stablecoins users will accept. The shell manager contains the logic necessary to ensure users always send and receive the correct stablecoins. And the liquidity pool facilitates swaps between stablecoins when necessary.
 
 ### **What is a Cowri "shell"?**
 
