@@ -72,7 +72,7 @@ The `cowri-crab-corner` Truffle Box has extra files and folders in it, but we wo
 
 ### Start Your Local Development Blockchain
 
-1. Double check that Ganache-CLI is installed with `ganache-cli --version`
+1. Confirm that Ganache-CLI is installed with `ganache-cli --version`
    1. If it is not installed and you see an error, install ganache-cli with `npm install -g ganache-cli`
 2. Download and unzip the [Cowri Ganache Snapshot](http://download.cowri.io/cowri-ganache.zip). This snapshot contains the Cowri protocol smart contract.
 3. Start Ganache-cli with `ganache-cli --db cowri-ganache --networkId 50 --account '0x43820EB3668B9B86BA8066996826D614DF45D7292FD7D27DBFE4B409982CAA5E, 2000000000000000000' -u 0x40e3ba962dFa3e41d1B54A97199831c2C99f6f37`
