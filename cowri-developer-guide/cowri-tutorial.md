@@ -111,7 +111,7 @@ Now we're ready to use our dapp!
    ![MetaMask transaction](../.gitbook/assets/cowri_crab_corner_tx_list.png)
 
 {% hint style="info" %}
-To see the updated balances in cowri crab corner refresh the page.
+To see the updated balances in cowri crab corner **refresh** the page.
 {% endhint %}
 
 Congratulations! You have successfully integrated Cowri into the Cowri Crab Corner! For developing locally, you have all the tools you need to start making more advanced dapps.
