@@ -39,7 +39,7 @@ With MetaMask connected to Kovan, we now need to create a cowri shell for the cu
 git clone http://github.com/cowri/crab-corner-tutorial.git
 cd crab-corner-tutorial/crab-corner
 npm install
-nmp start
+npm start
 ```
 
 2. Notice how the buttons by each crab don't do anything. It's our job to replace these buttons with the Cowri Send React buttons.
