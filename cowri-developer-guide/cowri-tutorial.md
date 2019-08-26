@@ -47,7 +47,6 @@ With our Cowri Shell created on Kovan, we now need to implement our Send Cowri c
 | :--- | :--- | :--- |
 | address | `string` | the receiver's public address |
 | amount | `number` | the amount of cowri to send |
-| web3 | `Web3` | instance of web3 |
 
 1. Install and save `@cowri/send-react`:
 
@@ -67,7 +66,7 @@ import SendCowri from '@cowri/send-react';
 <Button text={'Donate'} />
 ```
 
-4. Add `SendCowri` component and pass in `address` and `web3` from props:
+4. Add `SendCowri` component and pass in `address` from props:
 
 ```javascript
 <SendCowri address={address} />
